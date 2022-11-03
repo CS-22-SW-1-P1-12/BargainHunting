@@ -3,4 +3,4 @@ project(BargainHunting C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(BargainHunting main.c)
+add_executable(BargainHunting main.c main.h)
