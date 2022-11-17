@@ -1,22 +1,22 @@
 # style guide for p1
 ```c
-//variables need to make sense
-//structs defined with typedef and PascalCase
+//variables and functions need to make sense
+//structs defined with typedef and snake_case
 typedef struct {
         int count;
         int thisStyleGuide;
-}MyStruct;
+}my_struct;
 //two linebreaks between declarations and functions
 
 
-//functions with snake_case to make snake group happy
-//var camelCase
-int style_guide(int varName) 
+//functions with PascalCase
+//variables camelCase
+int StyleGuide(int varName) 
 {
     while(1){
         //always brackets no spaces
         if(true){
-            run();
+            Run();
         }
     }
 }
