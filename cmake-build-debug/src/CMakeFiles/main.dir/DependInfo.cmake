@@ -8,7 +8,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Github/BargainHunting/src/main.c" "src/CMakeFiles/main.dir/main.c.obj" "gcc" "src/CMakeFiles/main.dir/main.c.obj.d"
+  "C:/Users/sinag/CLionProjects/BargainHunting/src/calculations.c" "src/CMakeFiles/main.dir/calculations.c.obj" "gcc" "src/CMakeFiles/main.dir/calculations.c.obj.d"
+  "C:/Users/sinag/CLionProjects/BargainHunting/src/database.c" "src/CMakeFiles/main.dir/database.c.obj" "gcc" "src/CMakeFiles/main.dir/database.c.obj.d"
+  "C:/Users/sinag/CLionProjects/BargainHunting/src/grocery_list.c" "src/CMakeFiles/main.dir/grocery_list.c.obj" "gcc" "src/CMakeFiles/main.dir/grocery_list.c.obj.d"
+  "C:/Users/sinag/CLionProjects/BargainHunting/src/main.c" "src/CMakeFiles/main.dir/main.c.obj" "gcc" "src/CMakeFiles/main.dir/main.c.obj.d"
+  "C:/Users/sinag/CLionProjects/BargainHunting/src/preferences.c" "src/CMakeFiles/main.dir/preferences.c.obj" "gcc" "src/CMakeFiles/main.dir/preferences.c.obj.d"
+  "C:/Users/sinag/CLionProjects/BargainHunting/src/sort_shopping_list.c" "src/CMakeFiles/main.dir/sort_shopping_list.c.obj" "gcc" "src/CMakeFiles/main.dir/sort_shopping_list.c.obj.d"
   )
 
 # Targets to which this target links.

@@ -47,19 +47,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = C:\Users\sinag\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\222.4167.25\bin\cmake\win\bin\cmake.exe
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" -E rm -f
+RM = C:\Users\sinag\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\222.4167.25\bin\cmake\win\bin\cmake.exe -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Github\BargainHunting
+CMAKE_SOURCE_DIR = C:\Users\sinag\CLionProjects\BargainHunting
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Github\BargainHunting\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\sinag\CLionProjects\BargainHunting\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -67,7 +67,7 @@ CMAKE_BINARY_DIR = C:\Github\BargainHunting\cmake-build-debug
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	C:\Users\sinag\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\222.4167.25\bin\cmake\win\bin\cmake.exe -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -77,7 +77,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	C:\Users\sinag\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\222.4167.25\bin\cmake\win\bin\cmake.exe --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -86,14 +86,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /d C:\Github\BargainHunting\cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start C:\Github\BargainHunting\cmake-build-debug\CMakeFiles C:\Github\BargainHunting\cmake-build-debug\src\\CMakeFiles\progress.marks
-	cd /d C:\Github\BargainHunting\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Github\BargainHunting\cmake-build-debug\CMakeFiles 0
+	cd /d C:\Users\sinag\CLionProjects\BargainHunting\cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start C:\Users\sinag\CLionProjects\BargainHunting\cmake-build-debug\CMakeFiles C:\Users\sinag\CLionProjects\BargainHunting\cmake-build-debug\src\\CMakeFiles\progress.marks
+	cd /d C:\Users\sinag\CLionProjects\BargainHunting\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\sinag\CLionProjects\BargainHunting\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /d C:\Github\BargainHunting\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/clean
+	cd /d C:\Users\sinag\CLionProjects\BargainHunting\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -102,22 +102,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /d C:\Github\BargainHunting\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/preinstall
+	cd /d C:\Users\sinag\CLionProjects\BargainHunting\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /d C:\Github\BargainHunting\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/preinstall
+	cd /d C:\Users\sinag\CLionProjects\BargainHunting\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /d C:\Github\BargainHunting\cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
+	cd /d C:\Users\sinag\CLionProjects\BargainHunting\cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/CMakeFiles/main.dir/rule:
-	cd /d C:\Github\BargainHunting\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/CMakeFiles/main.dir/rule
+	cd /d C:\Users\sinag\CLionProjects\BargainHunting\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/CMakeFiles/main.dir/rule
 .PHONY : src/CMakeFiles/main.dir/rule
 
 # Convenience name for target.
@@ -126,15 +126,87 @@ main: src/CMakeFiles/main.dir/rule
 
 # fast build rule for target.
 main/fast:
-	cd /d C:\Github\BargainHunting\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/build
+	cd /d C:\Users\sinag\CLionProjects\BargainHunting\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/build
 .PHONY : main/fast
+
+calculations.obj: calculations.c.obj
+.PHONY : calculations.obj
+
+# target to build an object file
+calculations.c.obj:
+	cd /d C:\Users\sinag\CLionProjects\BargainHunting\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/calculations.c.obj
+.PHONY : calculations.c.obj
+
+calculations.i: calculations.c.i
+.PHONY : calculations.i
+
+# target to preprocess a source file
+calculations.c.i:
+	cd /d C:\Users\sinag\CLionProjects\BargainHunting\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/calculations.c.i
+.PHONY : calculations.c.i
+
+calculations.s: calculations.c.s
+.PHONY : calculations.s
+
+# target to generate assembly for a file
+calculations.c.s:
+	cd /d C:\Users\sinag\CLionProjects\BargainHunting\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/calculations.c.s
+.PHONY : calculations.c.s
+
+database.obj: database.c.obj
+.PHONY : database.obj
+
+# target to build an object file
+database.c.obj:
+	cd /d C:\Users\sinag\CLionProjects\BargainHunting\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/database.c.obj
+.PHONY : database.c.obj
+
+database.i: database.c.i
+.PHONY : database.i
+
+# target to preprocess a source file
+database.c.i:
+	cd /d C:\Users\sinag\CLionProjects\BargainHunting\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/database.c.i
+.PHONY : database.c.i
+
+database.s: database.c.s
+.PHONY : database.s
+
+# target to generate assembly for a file
+database.c.s:
+	cd /d C:\Users\sinag\CLionProjects\BargainHunting\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/database.c.s
+.PHONY : database.c.s
+
+grocery_list.obj: grocery_list.c.obj
+.PHONY : grocery_list.obj
+
+# target to build an object file
+grocery_list.c.obj:
+	cd /d C:\Users\sinag\CLionProjects\BargainHunting\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/grocery_list.c.obj
+.PHONY : grocery_list.c.obj
+
+grocery_list.i: grocery_list.c.i
+.PHONY : grocery_list.i
+
+# target to preprocess a source file
+grocery_list.c.i:
+	cd /d C:\Users\sinag\CLionProjects\BargainHunting\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/grocery_list.c.i
+.PHONY : grocery_list.c.i
+
+grocery_list.s: grocery_list.c.s
+.PHONY : grocery_list.s
+
+# target to generate assembly for a file
+grocery_list.c.s:
+	cd /d C:\Users\sinag\CLionProjects\BargainHunting\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/grocery_list.c.s
+.PHONY : grocery_list.c.s
 
 main.obj: main.c.obj
 .PHONY : main.obj
 
 # target to build an object file
 main.c.obj:
-	cd /d C:\Github\BargainHunting\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/main.c.obj
+	cd /d C:\Users\sinag\CLionProjects\BargainHunting\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/main.c.obj
 .PHONY : main.c.obj
 
 main.i: main.c.i
@@ -142,7 +214,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	cd /d C:\Github\BargainHunting\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/main.c.i
+	cd /d C:\Users\sinag\CLionProjects\BargainHunting\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -150,8 +222,56 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	cd /d C:\Github\BargainHunting\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/main.c.s
+	cd /d C:\Users\sinag\CLionProjects\BargainHunting\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/main.c.s
 .PHONY : main.c.s
+
+preferences.obj: preferences.c.obj
+.PHONY : preferences.obj
+
+# target to build an object file
+preferences.c.obj:
+	cd /d C:\Users\sinag\CLionProjects\BargainHunting\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/preferences.c.obj
+.PHONY : preferences.c.obj
+
+preferences.i: preferences.c.i
+.PHONY : preferences.i
+
+# target to preprocess a source file
+preferences.c.i:
+	cd /d C:\Users\sinag\CLionProjects\BargainHunting\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/preferences.c.i
+.PHONY : preferences.c.i
+
+preferences.s: preferences.c.s
+.PHONY : preferences.s
+
+# target to generate assembly for a file
+preferences.c.s:
+	cd /d C:\Users\sinag\CLionProjects\BargainHunting\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/preferences.c.s
+.PHONY : preferences.c.s
+
+sort_shopping_list.obj: sort_shopping_list.c.obj
+.PHONY : sort_shopping_list.obj
+
+# target to build an object file
+sort_shopping_list.c.obj:
+	cd /d C:\Users\sinag\CLionProjects\BargainHunting\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/sort_shopping_list.c.obj
+.PHONY : sort_shopping_list.c.obj
+
+sort_shopping_list.i: sort_shopping_list.c.i
+.PHONY : sort_shopping_list.i
+
+# target to preprocess a source file
+sort_shopping_list.c.i:
+	cd /d C:\Users\sinag\CLionProjects\BargainHunting\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/sort_shopping_list.c.i
+.PHONY : sort_shopping_list.c.i
+
+sort_shopping_list.s: sort_shopping_list.c.s
+.PHONY : sort_shopping_list.s
+
+# target to generate assembly for a file
+sort_shopping_list.c.s:
+	cd /d C:\Users\sinag\CLionProjects\BargainHunting\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/sort_shopping_list.c.s
+.PHONY : sort_shopping_list.c.s
 
 # Help Target
 help:
@@ -162,9 +282,24 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... main
+	@echo ... calculations.obj
+	@echo ... calculations.i
+	@echo ... calculations.s
+	@echo ... database.obj
+	@echo ... database.i
+	@echo ... database.s
+	@echo ... grocery_list.obj
+	@echo ... grocery_list.i
+	@echo ... grocery_list.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... preferences.obj
+	@echo ... preferences.i
+	@echo ... preferences.s
+	@echo ... sort_shopping_list.obj
+	@echo ... sort_shopping_list.i
+	@echo ... sort_shopping_list.s
 .PHONY : help
 
 
@@ -176,6 +311,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /d C:\Github\BargainHunting\cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
+	cd /d C:\Users\sinag\CLionProjects\BargainHunting\cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
