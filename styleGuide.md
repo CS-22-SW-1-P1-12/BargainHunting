@@ -1,11 +1,11 @@
 # style guide for p1
 ```c
 //variables and functions need to make sense
-//structs defined with typedef and snake_case
+//structs defined with typedef and snake_case ends with _t
 typedef struct {
         int count;
         int thisStyleGuide;
-}my_struct;
+}my_struct_t;
 //two linebreaks between declarations and functions
 
 
