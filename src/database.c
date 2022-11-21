@@ -3,7 +3,7 @@
 //
 //
 // Created by Lennart Diego Kahn on 03/11/2022.
-//
+/*
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -39,3 +39,4 @@ int main(){
 
     printf("NAME: %s\nPRICE: %lf\nPRICE PER KG: %lf\nSTORE: %s", milk.name, milk.price, milk.ppk, milk.first_tag->name);
 }
+ */

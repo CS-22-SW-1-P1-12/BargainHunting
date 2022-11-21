@@ -7,4 +7,4 @@
 
 #endif //BARGAINHUNTING_CREATEMENU_H
 
-int CreateMenu(char* options);
+int CreateMenu(char options[20][20]);
