@@ -1,1 +1,1 @@
-add_executable(main main.c main.h database.c preferences.c grocery_list.c calculations.c sort_shopping_list.c)
+add_executable(main main.c main.h database.c preferences.c grocery_list.c calculations.c sort_shopping_list.c CreateMenu.c CreateMenu.h)
