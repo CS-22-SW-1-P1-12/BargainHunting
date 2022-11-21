@@ -1,4 +1,4 @@
-"/Users/lennartdiegokahn/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=/Users/lennartdiegokahn/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/ninja/mac/ninja" -G Ninja -S /Users/lennartdiegokahn/Documents/GitHub/BargainHunting -B /Users/lennartdiegokahn/Documents/GitHub/BargainHunting/cmake-build-debug
+/home/deekahy/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /home/deekahy/CLionProjects/BargainHunting -B /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/lennartdiegokahn/Documents/GitHub/BargainHunting/cmake-build-debug
+-- Build files have been written to: /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug
