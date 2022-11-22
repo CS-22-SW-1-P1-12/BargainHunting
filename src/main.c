@@ -6,6 +6,7 @@
 #include "main.h"
 #include "CreateMenu.h"
 
+
 /*
  * This function has the main loop and displays / returns the menu selected.
  * To make your own menu just copy this code and #include "CreateMenu.h"
@@ -14,7 +15,7 @@
  * #################################################################
  */
 void MainMenuScreen(){
-    char arr[20][50] = {"quit", "Individual Search", "List (load, make and search a list)", "Settings (store preferance etc)"};
+    char arr[MAX_OPTIONS][MAX_STRLEN] = {"quit", "Individual Search", "List (load, make and search a list)", "Settings (store preferance etc)"};
     int exitProgram = 0;
 
     while(exitProgram == 0) {
@@ -22,7 +23,7 @@ void MainMenuScreen(){
         switch (result) {
             case 1:
                 // Ending program by letting it return to main and end naturally instead of using (exit)
-                printf("Ending program...");
+                printf(KRED "Ending program...");
                 exitProgram = 1;
                 break;
             case 2:
@@ -39,12 +40,15 @@ void MainMenuScreen(){
                 break;
             default:
                 // no valid input got sendt..... retrying.
-                printf("%d is not a valid input", result);
+                printf(KRED "%d is not a valid input, try again", result);
+
         }
     }
 }
 
+
 int main(){
     MainMenuScreen();
 
+    return 0;
 }
