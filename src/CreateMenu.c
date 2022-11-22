@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include<string.h>
 
-
 // return the amount of elements inside of options
 int Counter(char options[MAX_OPTIONS][MAX_STRLEN]){
     int count;
@@ -35,7 +34,6 @@ int ScanInput(){
 
     int result;
     char strInput[100]; // 100 to prevent a segfault from happening if grandpa writes his life story
-
     scanf("%s", strInput);
 
     //strtol is used to attempt to convert string to int, removes chars and saves int if any in input. If no ints found returns 0

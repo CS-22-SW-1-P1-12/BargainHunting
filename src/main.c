@@ -1,7 +1,3 @@
-//
-// Created by Lennart Diego Kahn on 03/11/2022.
-//
-
 #include <stdio.h>
 #include "main.h"
 #include "CreateMenu.h"
@@ -15,11 +11,11 @@
  * #################################################################
  */
 void MainMenuScreen(){
-    char arr[MAX_OPTIONS][MAX_STRLEN] = {"quit", "Individual Search", "List (load, make and search a list)", "Settings (store preferance etc)"};
+    char selectionOptions[MAX_OPTIONS][MAX_STRLEN] = {"quit", "Individual Search", "List (load, make and search a list)", "Settings (store preferance etc)"};
     int exitProgram = 0;
 
-    while(exitProgram == 0) {
-        int result = CreateMenu(arr);
+   do {
+        int result = CreateMenu(selectionOptions);
         switch (result) {
             case 1:
                 // Ending program by letting it return to main and end naturally instead of using (exit)
@@ -41,7 +37,6 @@ void MainMenuScreen(){
             default:
                 // no valid input got sendt..... retrying.
                 printf(KRED "%d is not a valid input, try again", result);
-
         }
     }
 }
@@ -49,6 +44,5 @@ void MainMenuScreen(){
 
 int main(){
     MainMenuScreen();
-
     return 0;
 }
