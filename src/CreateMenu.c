@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include<string.h>
 
-// return the amount of elements inside of options
+// counts and returns the amount of elements inside of array of options
 int Counter(char options[MAX_OPTIONS][MAX_STRLEN]){
     int count;
     for (count = 0; count < MAX_OPTIONS; ++count) {

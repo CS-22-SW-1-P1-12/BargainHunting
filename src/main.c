@@ -38,7 +38,7 @@ void MainMenuScreen(){
                 // no valid input got sendt..... retrying.
                 printf(KRED "%d is not a valid input, try again", result);
         }
-    }
+    }while(exitProgram == 0);
 }
 
 
