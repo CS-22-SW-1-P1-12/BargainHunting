@@ -60,30 +60,26 @@ data_t* LoadDatabase(){
         fgetc(filePtr);
         fgetc(filePtr);
         newProduct->first_tag = NULL;
-        while(1)
+        int stopRun = 0;
+        while(!stopRun)
         {
             fscanf(filePtr,"%[^,]",&tag[0]);
             fgetc(filePtr);
             checkForEnd = fgetc(filePtr);
-            if(checkForEnd != '\"')
+            if(checkForEnd == '\"')
             {
-                tag_t* newTag = malloc(sizeof(tag_t));;
-                newTag->name = malloc(sizeof(char) * GetStrLength(tag));
-                strcpy(newTag->name,tag);
-                if(newProduct->first_tag == NULL)
-                {
-                    newTag->nextTag = NULL;
-                    newProduct->first_tag = newTag;
-                }
-                else{
-                    newTag->nextTag = newProduct->first_tag;
-                    newProduct->first_tag = newTag;
-                }
-                fseek(filePtr, -1, SEEK_CUR);
+                stopRun = 1;
             }
             else{
-                break;
+                fseek(filePtr, -1, SEEK_CUR);
             }
+            tag_t* newTag = malloc(sizeof(tag_t));;
+            newTag->name = malloc(sizeof(char) * GetStrLength(tag));
+            strcpy(newTag->name,tag);
+
+            newTag->nextTag = newProduct->first_tag;
+            newProduct->first_tag = newTag;
+
         }
         newProduct->nextProduct = data->firstProduct;
         data->firstProduct = newProduct;
