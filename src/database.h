@@ -27,6 +27,6 @@ typedef struct {
  * function that load the data in and returns in
  * @return returns data_t struct which includes all data each child of data_t is a product linking to the next one
  */
-data_t  LoadDatabase();
+data_t*  LoadDatabase();
 int GetStrLength(const char* data);
 #endif //BARGAINHUNTING_DATABASE_H

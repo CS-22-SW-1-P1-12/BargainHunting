@@ -10,7 +10,7 @@
 					[
 						1
 					],
-					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.23"
@@ -20,7 +20,7 @@
 				},
 				{
 					"build" : "src",
-					"jsonFile" : "directory-src-Debug-b6cf2213fc5053b67c22.json",
+					"jsonFile" : "directory-src-Debug-c94b7c2814d5a21df52c.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.23"
@@ -30,7 +30,8 @@
 					"source" : "src",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -46,7 +47,8 @@
 					"name" : "BargainHunting",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -54,8 +56,15 @@
 			[
 				{
 					"directoryIndex" : 1,
+					"id" : "database::@145eef247bfb46b6828c",
+					"jsonFile" : "target-database-Debug-096a87bd20517881be0f.json",
+					"name" : "database",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
 					"id" : "main::@145eef247bfb46b6828c",
-					"jsonFile" : "target-main-Debug-db21932fd64eacac7ff6.json",
+					"jsonFile" : "target-main-Debug-e2bb9c1f4fb92dc21993.json",
 					"name" : "main",
 					"projectIndex" : 0
 				}
@@ -65,8 +74,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/Users/lennartdiegokahn/Documents/GitHub/BargainHunting/cmake-build-debug",
-		"source" : "/Users/lennartdiegokahn/Documents/GitHub/BargainHunting"
+		"build" : "C:/Users/manta/Documents/GitHub/BargainHunting/cmake-build-debug",
+		"source" : "C:/Users/manta/Documents/GitHub/BargainHunting"
 	},
 	"version" : 
 	{

@@ -10,9 +10,22 @@
 #include "database.h"
 
 int main(){
-    LoadDatabase();
+    data_t* data = LoadDatabase();
+    product_t*  product = data->firstProduct;
+    while(product != NULL)
+    {
+        printf("name: %s price: %.2lf kr. ppk: %.2lf weight: %.2lf kg store: %s tags: ",product->name,product->price,product->ppk,product->weight,product->store);
+        tag_t* tempTag = product->first_tag;
+        while(tempTag != NULL)
+        {
+            printf("%s, ",tempTag->name);
+            tempTag = tempTag->nextTag;
+        }
+        printf("\n");
+        product = product->nextProduct;
+    }
 }
-data_t LoadDatabase(){
+data_t* LoadDatabase(){
     FILE* filePtr;
     filePtr = fopen("./data/data.txt","r");
     if(filePtr == NULL)
@@ -20,18 +33,18 @@ data_t LoadDatabase(){
         exit(-1);
     }
     data_t* data = malloc(sizeof(data_t));
+    data->firstProduct = NULL;
     char buffer[100];
     int test = 0;
     fscanf(filePtr,"%[^\n]",buffer);
     test =fgetc(filePtr);
     while (test != EOF){
-
         product_t* newProduct= malloc(sizeof(product_t));
         char name[20];
         char store[20];
         char tag[20];
         int checkForEnd;
-        fscanf(filePtr,"%[^,]",&name);
+        fscanf(filePtr,"%[^,]",&name[0]);
         newProduct->name = malloc(sizeof(char) * GetStrLength(name));
         strcpy(newProduct->name,name);
         fgetc(filePtr);
@@ -41,14 +54,15 @@ data_t LoadDatabase(){
         fgetc(filePtr);
         fscanf(filePtr,"%lf",&newProduct->weight);
         fgetc(filePtr);
-        fscanf(filePtr,"%[^,]",&store);
+        fscanf(filePtr,"%[^,]",&store[0]);
         newProduct->store = malloc(sizeof(char) * GetStrLength(store));
         strcpy(newProduct->store,store);
         fgetc(filePtr);
         fgetc(filePtr);
+        newProduct->first_tag = NULL;
         while(1)
         {
-            fscanf(filePtr,"%[^,]",&tag);
+            fscanf(filePtr,"%[^,]",&tag[0]);
             fgetc(filePtr);
             checkForEnd = fgetc(filePtr);
             if(checkForEnd != '\"')
@@ -71,14 +85,12 @@ data_t LoadDatabase(){
                 break;
             }
         }
-        printf("%s\n",newProduct->name);
-        printf("%.2lf\n",newProduct->price);
-        printf("%.2lf\n",newProduct->ppk);
-        printf("%.2lf\n",newProduct->weight);
-        printf("%s\n",newProduct->store);
+        newProduct->nextProduct = data->firstProduct;
+        data->firstProduct = newProduct;
         test =fgetc(filePtr);
     }
     fclose(filePtr);
+    return data;
 }
 int GetStrLength(const char* string)
 {
