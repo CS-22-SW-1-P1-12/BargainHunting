@@ -25,9 +25,8 @@ void SearchDatabase(const char searchTerm[MAX_SEARCH_LEN], data_t* database){
 
     while(product != NULL){
         if(!strcmp(searchTerm, product->name)){
-            printf("%s product matched our input\n", product->name);
-            //char buf[256];
-            //snprintf(buf, sizeof(buf), "%s%s%s%s", product->name,product->price,product->ppk,product->weight,product->store);
+            printf("\n%s product matched our input\n", product->name);
+            printf( "Name: %s, price: %lf kr. ppk: %lf kr/kg, store: %s\n", product->name,product->price,product->ppk,product->store);
 
             product_t* newMatchingProduct = malloc(sizeof(product_t));
 
@@ -46,12 +45,12 @@ void SearchDatabase(const char searchTerm[MAX_SEARCH_LEN], data_t* database){
         product = product->nextProduct;
     }
 
-    product_t* currentProduct = foundProducts->firstProduct;
+    /*product_t* currentProduct = foundProducts->firstProduct;
     printf("The found products are:\n");
     while(currentProduct != NULL){
         printf("%s", currentProduct->name);
         currentProduct = currentProduct->nextProduct;
-    }
+    } */
 
 }
 
