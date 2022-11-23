@@ -26,7 +26,8 @@ data_t* LoadDatabase(){
     filePtr = fopen("./data/data.txt","r");
     if(filePtr == NULL)
     {
-        exit(-1);
+        printf("sows");
+        exit(3);
     }
     data_t* data = malloc(sizeof(data_t));
     data->firstProduct = NULL;

@@ -10,12 +10,13 @@
  * # Put your main function into the switch case fitting your code #
  * #################################################################
  */
-void MainMenuScreen(){
+void MainMenuScreen(data_t* database){
     char selectionOptions[MAX_OPTIONS][MAX_STRLEN] = {"quit", "Individual Search", "List (load, make and search a list)", "Settings (store preferance etc)"};
     int exitProgram = 0;
 
    do {
-        int result = CreateMenu(selectionOptions);
+        //int result = CreateMenu(selectionOptions);
+        int result = 2;
         switch (result) {
             case 1:
                 // Ending program by letting it return to main and end naturally instead of using (exit)
@@ -23,9 +24,9 @@ void MainMenuScreen(){
                 exitProgram = 1;
                 break;
             case 2:
-                // Open up the Search menu and start the search function
+                // Open up the Search menu and start the search function and give it the database
                 printf("Opening Search menu");
-                //printDataBase();
+                Search(database);
                 break;
             case 3:
                 // Open up the List menu and start the List function
@@ -39,6 +40,7 @@ void MainMenuScreen(){
                 // no valid input got sent..... retrying.
                 printf(KRED "Your input was not valid, please put any numeric symbol displayed on the screen.");
         }
+        break;
     }while(exitProgram == 0);
 }
 
