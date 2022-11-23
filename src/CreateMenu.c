@@ -30,7 +30,7 @@ void Draw(char options[MAX_OPTIONS][MAX_STRLEN]){
 
 // return the selected option (1,2,3,4,....)
 int ScanInput(){
-    printf("\n\nPlease input the number corrisponding to your desired option: ");
+    printf("\n\nPlease input the number corresponding to your desired option: ");
 
     int result;
     char strInput[100]; // 100 to prevent a segfault from happening if grandpa writes his life story
