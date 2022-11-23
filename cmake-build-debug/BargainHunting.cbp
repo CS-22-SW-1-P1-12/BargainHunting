@@ -80,25 +80,10 @@
 		<Unit filename="/home/deekahy/CLionProjects/BargainHunting/src/CreateMenu.h">
 			<Option target="main"/>
 		</Unit>
-		<Unit filename="/home/deekahy/CLionProjects/BargainHunting/src/calculations.c">
-			<Option target="main"/>
-		</Unit>
-		<Unit filename="/home/deekahy/CLionProjects/BargainHunting/src/database.c">
-			<Option target="main"/>
-		</Unit>
-		<Unit filename="/home/deekahy/CLionProjects/BargainHunting/src/grocery_list.c">
-			<Option target="main"/>
-		</Unit>
 		<Unit filename="/home/deekahy/CLionProjects/BargainHunting/src/main.c">
 			<Option target="main"/>
 		</Unit>
 		<Unit filename="/home/deekahy/CLionProjects/BargainHunting/src/main.h">
-			<Option target="main"/>
-		</Unit>
-		<Unit filename="/home/deekahy/CLionProjects/BargainHunting/src/preferences.c">
-			<Option target="main"/>
-		</Unit>
-		<Unit filename="/home/deekahy/CLionProjects/BargainHunting/src/sort_shopping_list.c">
 			<Option target="main"/>
 		</Unit>
 		<Unit filename="/home/deekahy/CLionProjects/BargainHunting/CMakeLists.txt">

@@ -83,80 +83,10 @@ src/CMakeFiles/main.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/main.c.s"
 	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/deekahy/CLionProjects/BargainHunting/src/main.c -o CMakeFiles/main.dir/main.c.s
 
-src/CMakeFiles/main.dir/database.c.o: src/CMakeFiles/main.dir/flags.make
-src/CMakeFiles/main.dir/database.c.o: ../src/database.c
-src/CMakeFiles/main.dir/database.c.o: src/CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/deekahy/CLionProjects/BargainHunting/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object src/CMakeFiles/main.dir/database.c.o"
-	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/database.c.o -MF CMakeFiles/main.dir/database.c.o.d -o CMakeFiles/main.dir/database.c.o -c /home/deekahy/CLionProjects/BargainHunting/src/database.c
-
-src/CMakeFiles/main.dir/database.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/database.c.i"
-	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/deekahy/CLionProjects/BargainHunting/src/database.c > CMakeFiles/main.dir/database.c.i
-
-src/CMakeFiles/main.dir/database.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/database.c.s"
-	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/deekahy/CLionProjects/BargainHunting/src/database.c -o CMakeFiles/main.dir/database.c.s
-
-src/CMakeFiles/main.dir/preferences.c.o: src/CMakeFiles/main.dir/flags.make
-src/CMakeFiles/main.dir/preferences.c.o: ../src/preferences.c
-src/CMakeFiles/main.dir/preferences.c.o: src/CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/deekahy/CLionProjects/BargainHunting/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object src/CMakeFiles/main.dir/preferences.c.o"
-	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/preferences.c.o -MF CMakeFiles/main.dir/preferences.c.o.d -o CMakeFiles/main.dir/preferences.c.o -c /home/deekahy/CLionProjects/BargainHunting/src/preferences.c
-
-src/CMakeFiles/main.dir/preferences.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/preferences.c.i"
-	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/deekahy/CLionProjects/BargainHunting/src/preferences.c > CMakeFiles/main.dir/preferences.c.i
-
-src/CMakeFiles/main.dir/preferences.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/preferences.c.s"
-	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/deekahy/CLionProjects/BargainHunting/src/preferences.c -o CMakeFiles/main.dir/preferences.c.s
-
-src/CMakeFiles/main.dir/grocery_list.c.o: src/CMakeFiles/main.dir/flags.make
-src/CMakeFiles/main.dir/grocery_list.c.o: ../src/grocery_list.c
-src/CMakeFiles/main.dir/grocery_list.c.o: src/CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/deekahy/CLionProjects/BargainHunting/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object src/CMakeFiles/main.dir/grocery_list.c.o"
-	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/grocery_list.c.o -MF CMakeFiles/main.dir/grocery_list.c.o.d -o CMakeFiles/main.dir/grocery_list.c.o -c /home/deekahy/CLionProjects/BargainHunting/src/grocery_list.c
-
-src/CMakeFiles/main.dir/grocery_list.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/grocery_list.c.i"
-	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/deekahy/CLionProjects/BargainHunting/src/grocery_list.c > CMakeFiles/main.dir/grocery_list.c.i
-
-src/CMakeFiles/main.dir/grocery_list.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/grocery_list.c.s"
-	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/deekahy/CLionProjects/BargainHunting/src/grocery_list.c -o CMakeFiles/main.dir/grocery_list.c.s
-
-src/CMakeFiles/main.dir/calculations.c.o: src/CMakeFiles/main.dir/flags.make
-src/CMakeFiles/main.dir/calculations.c.o: ../src/calculations.c
-src/CMakeFiles/main.dir/calculations.c.o: src/CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/deekahy/CLionProjects/BargainHunting/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object src/CMakeFiles/main.dir/calculations.c.o"
-	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/calculations.c.o -MF CMakeFiles/main.dir/calculations.c.o.d -o CMakeFiles/main.dir/calculations.c.o -c /home/deekahy/CLionProjects/BargainHunting/src/calculations.c
-
-src/CMakeFiles/main.dir/calculations.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/calculations.c.i"
-	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/deekahy/CLionProjects/BargainHunting/src/calculations.c > CMakeFiles/main.dir/calculations.c.i
-
-src/CMakeFiles/main.dir/calculations.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/calculations.c.s"
-	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/deekahy/CLionProjects/BargainHunting/src/calculations.c -o CMakeFiles/main.dir/calculations.c.s
-
-src/CMakeFiles/main.dir/sort_shopping_list.c.o: src/CMakeFiles/main.dir/flags.make
-src/CMakeFiles/main.dir/sort_shopping_list.c.o: ../src/sort_shopping_list.c
-src/CMakeFiles/main.dir/sort_shopping_list.c.o: src/CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/deekahy/CLionProjects/BargainHunting/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object src/CMakeFiles/main.dir/sort_shopping_list.c.o"
-	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/sort_shopping_list.c.o -MF CMakeFiles/main.dir/sort_shopping_list.c.o.d -o CMakeFiles/main.dir/sort_shopping_list.c.o -c /home/deekahy/CLionProjects/BargainHunting/src/sort_shopping_list.c
-
-src/CMakeFiles/main.dir/sort_shopping_list.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/sort_shopping_list.c.i"
-	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/deekahy/CLionProjects/BargainHunting/src/sort_shopping_list.c > CMakeFiles/main.dir/sort_shopping_list.c.i
-
-src/CMakeFiles/main.dir/sort_shopping_list.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/sort_shopping_list.c.s"
-	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/deekahy/CLionProjects/BargainHunting/src/sort_shopping_list.c -o CMakeFiles/main.dir/sort_shopping_list.c.s
-
 src/CMakeFiles/main.dir/CreateMenu.c.o: src/CMakeFiles/main.dir/flags.make
 src/CMakeFiles/main.dir/CreateMenu.c.o: ../src/CreateMenu.c
 src/CMakeFiles/main.dir/CreateMenu.c.o: src/CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/deekahy/CLionProjects/BargainHunting/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object src/CMakeFiles/main.dir/CreateMenu.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/deekahy/CLionProjects/BargainHunting/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object src/CMakeFiles/main.dir/CreateMenu.c.o"
 	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/CreateMenu.c.o -MF CMakeFiles/main.dir/CreateMenu.c.o.d -o CMakeFiles/main.dir/CreateMenu.c.o -c /home/deekahy/CLionProjects/BargainHunting/src/CreateMenu.c
 
 src/CMakeFiles/main.dir/CreateMenu.c.i: cmake_force
@@ -170,26 +100,16 @@ src/CMakeFiles/main.dir/CreateMenu.c.s: cmake_force
 # Object files for target main
 main_OBJECTS = \
 "CMakeFiles/main.dir/main.c.o" \
-"CMakeFiles/main.dir/database.c.o" \
-"CMakeFiles/main.dir/preferences.c.o" \
-"CMakeFiles/main.dir/grocery_list.c.o" \
-"CMakeFiles/main.dir/calculations.c.o" \
-"CMakeFiles/main.dir/sort_shopping_list.c.o" \
 "CMakeFiles/main.dir/CreateMenu.c.o"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
 src/main: src/CMakeFiles/main.dir/main.c.o
-src/main: src/CMakeFiles/main.dir/database.c.o
-src/main: src/CMakeFiles/main.dir/preferences.c.o
-src/main: src/CMakeFiles/main.dir/grocery_list.c.o
-src/main: src/CMakeFiles/main.dir/calculations.c.o
-src/main: src/CMakeFiles/main.dir/sort_shopping_list.c.o
 src/main: src/CMakeFiles/main.dir/CreateMenu.c.o
 src/main: src/CMakeFiles/main.dir/build.make
 src/main: src/CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/deekahy/CLionProjects/BargainHunting/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C executable main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/deekahy/CLionProjects/BargainHunting/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable main"
 	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

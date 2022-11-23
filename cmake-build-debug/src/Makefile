@@ -154,78 +154,6 @@ CreateMenu.c.s:
 	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/CreateMenu.c.s
 .PHONY : CreateMenu.c.s
 
-calculations.o: calculations.c.o
-.PHONY : calculations.o
-
-# target to build an object file
-calculations.c.o:
-	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/calculations.c.o
-.PHONY : calculations.c.o
-
-calculations.i: calculations.c.i
-.PHONY : calculations.i
-
-# target to preprocess a source file
-calculations.c.i:
-	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/calculations.c.i
-.PHONY : calculations.c.i
-
-calculations.s: calculations.c.s
-.PHONY : calculations.s
-
-# target to generate assembly for a file
-calculations.c.s:
-	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/calculations.c.s
-.PHONY : calculations.c.s
-
-database.o: database.c.o
-.PHONY : database.o
-
-# target to build an object file
-database.c.o:
-	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/database.c.o
-.PHONY : database.c.o
-
-database.i: database.c.i
-.PHONY : database.i
-
-# target to preprocess a source file
-database.c.i:
-	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/database.c.i
-.PHONY : database.c.i
-
-database.s: database.c.s
-.PHONY : database.s
-
-# target to generate assembly for a file
-database.c.s:
-	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/database.c.s
-.PHONY : database.c.s
-
-grocery_list.o: grocery_list.c.o
-.PHONY : grocery_list.o
-
-# target to build an object file
-grocery_list.c.o:
-	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/grocery_list.c.o
-.PHONY : grocery_list.c.o
-
-grocery_list.i: grocery_list.c.i
-.PHONY : grocery_list.i
-
-# target to preprocess a source file
-grocery_list.c.i:
-	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/grocery_list.c.i
-.PHONY : grocery_list.c.i
-
-grocery_list.s: grocery_list.c.s
-.PHONY : grocery_list.s
-
-# target to generate assembly for a file
-grocery_list.c.s:
-	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/grocery_list.c.s
-.PHONY : grocery_list.c.s
-
 main.o: main.c.o
 .PHONY : main.o
 
@@ -250,54 +178,6 @@ main.c.s:
 	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.c.s
 .PHONY : main.c.s
 
-preferences.o: preferences.c.o
-.PHONY : preferences.o
-
-# target to build an object file
-preferences.c.o:
-	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/preferences.c.o
-.PHONY : preferences.c.o
-
-preferences.i: preferences.c.i
-.PHONY : preferences.i
-
-# target to preprocess a source file
-preferences.c.i:
-	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/preferences.c.i
-.PHONY : preferences.c.i
-
-preferences.s: preferences.c.s
-.PHONY : preferences.s
-
-# target to generate assembly for a file
-preferences.c.s:
-	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/preferences.c.s
-.PHONY : preferences.c.s
-
-sort_shopping_list.o: sort_shopping_list.c.o
-.PHONY : sort_shopping_list.o
-
-# target to build an object file
-sort_shopping_list.c.o:
-	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/sort_shopping_list.c.o
-.PHONY : sort_shopping_list.c.o
-
-sort_shopping_list.i: sort_shopping_list.c.i
-.PHONY : sort_shopping_list.i
-
-# target to preprocess a source file
-sort_shopping_list.c.i:
-	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/sort_shopping_list.c.i
-.PHONY : sort_shopping_list.c.i
-
-sort_shopping_list.s: sort_shopping_list.c.s
-.PHONY : sort_shopping_list.s
-
-# target to generate assembly for a file
-sort_shopping_list.c.s:
-	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/sort_shopping_list.c.s
-.PHONY : sort_shopping_list.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -310,24 +190,9 @@ help:
 	@echo "... CreateMenu.o"
 	@echo "... CreateMenu.i"
 	@echo "... CreateMenu.s"
-	@echo "... calculations.o"
-	@echo "... calculations.i"
-	@echo "... calculations.s"
-	@echo "... database.o"
-	@echo "... database.i"
-	@echo "... database.s"
-	@echo "... grocery_list.o"
-	@echo "... grocery_list.i"
-	@echo "... grocery_list.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... preferences.o"
-	@echo "... preferences.i"
-	@echo "... preferences.s"
-	@echo "... sort_shopping_list.o"
-	@echo "... sort_shopping_list.i"
-	@echo "... sort_shopping_list.s"
 .PHONY : help
 
 

@@ -1,1 +1,1 @@
-/usr/bin/cc -g CMakeFiles/main.dir/main.c.o CMakeFiles/main.dir/database.c.o CMakeFiles/main.dir/preferences.c.o CMakeFiles/main.dir/grocery_list.c.o CMakeFiles/main.dir/calculations.c.o CMakeFiles/main.dir/sort_shopping_list.c.o CMakeFiles/main.dir/CreateMenu.c.o -o main 
+/usr/bin/cc -g CMakeFiles/main.dir/main.c.o CMakeFiles/main.dir/CreateMenu.c.o -o main 

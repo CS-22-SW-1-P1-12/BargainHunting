@@ -61,15 +61,6 @@ src/CMakeFiles/main.dir/CreateMenu.c.o: ../src/CreateMenu.c \
   /usr/include/bits/types/__locale_t.h \
   /usr/include/strings.h
 
-src/CMakeFiles/main.dir/calculations.c.o: ../src/calculations.c \
-  /usr/include/stdc-predef.h
-
-src/CMakeFiles/main.dir/database.c.o: ../src/database.c \
-  /usr/include/stdc-predef.h
-
-src/CMakeFiles/main.dir/grocery_list.c.o: ../src/grocery_list.c \
-  /usr/include/stdc-predef.h
-
 src/CMakeFiles/main.dir/main.c.o: ../src/main.c \
   /usr/include/stdc-predef.h \
   /usr/include/stdio.h \
@@ -99,26 +90,10 @@ src/CMakeFiles/main.dir/main.c.o: ../src/main.c \
   ../src/main.h \
   ../src/CreateMenu.h
 
-src/CMakeFiles/main.dir/preferences.c.o: ../src/preferences.c \
-  /usr/include/stdc-predef.h
-
-src/CMakeFiles/main.dir/sort_shopping_list.c.o: ../src/sort_shopping_list.c \
-  /usr/include/stdc-predef.h
-
-
-../src/sort_shopping_list.c:
-
-../src/preferences.c:
 
 ../src/main.h:
 
 ../src/main.c:
-
-../src/grocery_list.c:
-
-../src/database.c:
-
-../src/calculations.c:
 
 /usr/include/strings.h:
 
