@@ -5,5 +5,5 @@ A program that streamlines the process of saving money on groceries, include ent
 1. Get your entire shopping list done in one go!
 2. Always get the cheapest and best deals!
 
-## Contribute to a great open source project making your and others lives much better in the process!
+## Contribute to a great open source project making your and others lives much better in the process! :)
 

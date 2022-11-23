@@ -35,8 +35,8 @@ void MainMenuScreen(){
                 printf("Opening Settings menu");
                 break;
             default:
-                // no valid input got sendt..... retrying.
-                printf(KRED "%d is not a valid input, try again", result);
+                // no valid input got sent..... retrying.
+                printf(KRED "Your input was not valid, please put any numeric symbol displayed on the screen.");
         }
     }while(exitProgram == 0);
 }
