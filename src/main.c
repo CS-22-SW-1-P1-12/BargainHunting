@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include "main.h"
 #include "CreateMenu.h"
-
+#include "search.h"
+#include "database.h"
 
 /*
  * This function has the main loop and displays / returns the menu selected.
@@ -25,6 +25,7 @@ void MainMenuScreen(){
             case 2:
                 // Open up the Search menu and start the search function
                 printf("Opening Search menu");
+                //printDataBase();
                 break;
             case 3:
                 // Open up the List menu and start the List function

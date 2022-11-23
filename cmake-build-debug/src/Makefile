@@ -154,6 +154,30 @@ CreateMenu.c.s:
 	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/CreateMenu.c.s
 .PHONY : CreateMenu.c.s
 
+database.o: database.c.o
+.PHONY : database.o
+
+# target to build an object file
+database.c.o:
+	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/database.c.o
+.PHONY : database.c.o
+
+database.i: database.c.i
+.PHONY : database.i
+
+# target to preprocess a source file
+database.c.i:
+	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/database.c.i
+.PHONY : database.c.i
+
+database.s: database.c.s
+.PHONY : database.s
+
+# target to generate assembly for a file
+database.c.s:
+	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/database.c.s
+.PHONY : database.c.s
+
 main.o: main.c.o
 .PHONY : main.o
 
@@ -178,6 +202,30 @@ main.c.s:
 	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.c.s
 .PHONY : main.c.s
 
+search.o: search.c.o
+.PHONY : search.o
+
+# target to build an object file
+search.c.o:
+	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/search.c.o
+.PHONY : search.c.o
+
+search.i: search.c.i
+.PHONY : search.i
+
+# target to preprocess a source file
+search.c.i:
+	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/search.c.i
+.PHONY : search.c.i
+
+search.s: search.c.s
+.PHONY : search.s
+
+# target to generate assembly for a file
+search.c.s:
+	cd /home/deekahy/CLionProjects/BargainHunting/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/search.c.s
+.PHONY : search.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -190,9 +238,15 @@ help:
 	@echo "... CreateMenu.o"
 	@echo "... CreateMenu.i"
 	@echo "... CreateMenu.s"
+	@echo "... database.o"
+	@echo "... database.i"
+	@echo "... database.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... search.o"
+	@echo "... search.i"
+	@echo "... search.s"
 .PHONY : help
 
 
