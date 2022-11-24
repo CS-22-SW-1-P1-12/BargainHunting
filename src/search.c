@@ -55,7 +55,7 @@ void SearchDatabase(const char searchTerm[MAX_SEARCH_LEN], data_t* database){
 }
 
 int Search(data_t* database){
-    char input[MAX_SEARCH_LEN] = "chickenasdasasd_strips";
+    char input[MAX_SEARCH_LEN] = "chicken  strips";
     //GetSearchedInput(input); // redefine input to user string
 
     SearchDatabase(input, database);

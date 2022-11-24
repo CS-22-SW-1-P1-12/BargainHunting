@@ -10,6 +10,7 @@ typedef struct tag_t {
 }tag_t;
 //struct for products - first five vars are expected to always be included, with an optional number of tags also points to next product or null if it is the last one
 typedef struct product_t{
+    int index;
     char* name;
     double price;
     double ppk;

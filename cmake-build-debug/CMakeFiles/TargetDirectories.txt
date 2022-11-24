@@ -1,5 +1,5 @@
-/home/deekahy/CLionProjects/BargainHunting/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/deekahy/CLionProjects/BargainHunting/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/deekahy/CLionProjects/BargainHunting/cmake-build-debug/src/CMakeFiles/main.dir
-/home/deekahy/CLionProjects/BargainHunting/cmake-build-debug/src/CMakeFiles/edit_cache.dir
-/home/deekahy/CLionProjects/BargainHunting/cmake-build-debug/src/CMakeFiles/rebuild_cache.dir
+C:/Users/Kamilla/CLionProjects/BargainHunting/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Kamilla/CLionProjects/BargainHunting/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Kamilla/CLionProjects/BargainHunting/cmake-build-debug/src/CMakeFiles/main.dir
+C:/Users/Kamilla/CLionProjects/BargainHunting/cmake-build-debug/src/CMakeFiles/edit_cache.dir
+C:/Users/Kamilla/CLionProjects/BargainHunting/cmake-build-debug/src/CMakeFiles/rebuild_cache.dir

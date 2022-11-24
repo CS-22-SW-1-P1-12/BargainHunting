@@ -3,13 +3,13 @@
 #include <stdlib.h>
 #include <string.h>
 
-/*
+
 int main(){
     data_t* data = LoadDatabase();
     product_t*  product = data->firstProduct;
     while(product != NULL)
     {
-        printf("name: %s price: %.2lf kr. ppk: %.2lf weight: %.2lf kg store: %s tags: ",product->name,product->price,product->ppk,product->weight,product->store);
+        printf(" index: %d name: %s price: %.2lf kr. ppk: %.2lf weight: %.2lf kg store: %s tags: ", product->index,product->name,product->price,product->ppk,product->weight,product->store);
         tag_t* tempTag = product->first_tag;
         while(tempTag != NULL)
         {
@@ -20,7 +20,7 @@ int main(){
         product = product->nextProduct;
     }
 }
- */
+
 data_t* LoadDatabase(){
     FILE* filePtr;
     filePtr = fopen("./data/data.txt","r");
@@ -35,12 +35,20 @@ data_t* LoadDatabase(){
     int test = 0;
     fscanf(filePtr,"%[^\n]",buffer);
     test =fgetc(filePtr);
+
+    int i = 1; //used to increment index for each product
+
     while (test != EOF){
         product_t* newProduct= malloc(sizeof(product_t));
         char name[20];
         char store[20];
         char tag[20];
         int checkForEnd;
+
+
+        newProduct->index = i;
+        i++;
+
         fscanf(filePtr,"%[^,]",&name[0]);
         newProduct->name = malloc(sizeof(char) * GetStrLength(name));
         strcpy(newProduct->name,name);
@@ -81,6 +89,7 @@ data_t* LoadDatabase(){
         newProduct->nextProduct = data->firstProduct;
         data->firstProduct = newProduct;
         test =fgetc(filePtr);
+
     }
     fclose(filePtr);
     return data;
