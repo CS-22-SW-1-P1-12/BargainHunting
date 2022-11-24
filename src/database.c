@@ -4,22 +4,22 @@
 #include <string.h>
 
 
-int main(){
-    data_t* data = LoadDatabase();
-    product_t*  product = data->firstProduct;
-    while(product != NULL)
-    {
-        printf(" index: %d name: %s price: %.2lf kr. ppk: %.2lf weight: %.2lf kg store: %s tags: ", product->index,product->name,product->price,product->ppk,product->weight,product->store);
-        tag_t* tempTag = product->first_tag;
-        while(tempTag != NULL)
-        {
-            printf("%s, ",tempTag->name);
-            tempTag = tempTag->nextTag;
-        }
-        printf("\n");
-        product = product->nextProduct;
-    }
-}
+//int main(){
+//    data_t* data = LoadDatabase();
+//    product_t*  product = data->firstProduct;
+//    while(product != NULL)
+//    {
+//        printf(" index: %d name: %s price: %.2lf kr. ppk: %.2lf weight: %.2lf kg store: %s tags: ", product->index,product->name,product->price,product->ppk,product->weight,product->store);
+//        tag_t* tempTag = product->first_tag;
+//        while(tempTag != NULL)
+//        {
+//            printf("%s, ",tempTag->name);
+//            tempTag = tempTag->nextTag;
+//        }
+//        printf("\n");
+//        product = product->nextProduct;
+//    }
+//}
 
 data_t* LoadDatabase(){
     FILE* filePtr;

@@ -45,7 +45,7 @@ void MainMenuScreen(data_t* database){
 }
 
 
-//int main(){
-//    MainMenuScreen();
-//    return 0;
-//}
+int main(){
+    MainMenuScreen(LoadDatabase());
+    return 0;
+}

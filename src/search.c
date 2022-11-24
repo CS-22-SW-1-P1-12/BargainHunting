@@ -18,13 +18,20 @@ void SearchDatabase(const char searchTerm[MAX_SEARCH_LEN], data_t* database){
      * arr[] = {p1 name, p1 price, p1 ppk},
      *         {p2 name, p2 price, p2 ppk}
     */
+    int indexOfMatchingProducts[MAX_OPTIONS] = {0};
+
     product_t* product = database->firstProduct;
 
     data_t* foundProducts = malloc(sizeof(data_t));
     foundProducts->firstProduct = NULL;
 
+    int i = 0;
     while(product != NULL){
         if(!strcmp(searchTerm, product->name)){
+
+            indexOfMatchingProducts[i] = product->index;
+            i++;
+
             printf("\n%s product matched our input\n", product->name);
             printf( "Name: %s, price: %lf kr. ppk: %lf kr/kg, store: %s\n", product->name,product->price,product->ppk,product->store);
 
@@ -45,6 +52,12 @@ void SearchDatabase(const char searchTerm[MAX_SEARCH_LEN], data_t* database){
         product = product->nextProduct;
     }
 
+    for (int j = 0; j < MAX_OPTIONS; ++j) { //printing to test if index field of product struct is saved
+
+        if(indexOfMatchingProducts[j] != 0){
+            printf("this is saved index of nr %d product matching search: %d\n", j+1, indexOfMatchingProducts[j]);
+        }
+    }
     /*product_t* currentProduct = foundProducts->firstProduct;
     printf("The found products are:\n");
     while(currentProduct != NULL){
@@ -55,7 +68,7 @@ void SearchDatabase(const char searchTerm[MAX_SEARCH_LEN], data_t* database){
 }
 
 int Search(data_t* database){
-    char input[MAX_SEARCH_LEN] = "chicken  strips";
+    char input[MAX_SEARCH_LEN] = "chickenstrips";
     //GetSearchedInput(input); // redefine input to user string
 
     SearchDatabase(input, database);
