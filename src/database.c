@@ -14,7 +14,7 @@ int main(){
 //    product_t*  product = data->firstProduct;
 //    while(product != NULL)
 //    {
-//        printf("name: %s price: %.2lf kr. ppk: %.2lf weight: %.2lf kg store: %s tags: ",product->name,product->price,product->ppk,product->weight,product->store);
+//        printf("name: %s price: %.2lf kr. pricePerKilo: %.2lf weight: %.2lf kg store: %s tags: ",product->name,product->price,product->pricePerKilo,product->weight,product->store);
 //        tag_t* tempTag = product->first_tag;
 //        while(tempTag != NULL)
 //        {
@@ -25,7 +25,7 @@ int main(){
 //        product = product->nextProduct;
 //    }
     for (int i = 0; i < data->productSize; ++i) {
-       printf("name: %s price: %.2lf kr. ppk: %.2lf weight: %.2lf kg store: %s tags: ",data->products[i].name,data->products[i].price,data->products[i].ppk,data->products[i].weight,data->products[i].store);
+       printf("name: %s price: %.2lf kr. price per kilo: %.2lf weight: %.2lf kg store: %s tags: ",data->products[i].name,data->products[i].price,data->products[i].pricePerKilo,data->products[i].weight,data->products[i].store);
 
         for (int j = 0; j < data->linkTableSize; ++j) {
             if(i == data->linkTable[j].indexOfProduct)
@@ -46,17 +46,17 @@ data_t* LoadDatabase(){
     }
     data_t* data = malloc(sizeof(data_t));
     char buffer[100];
-    int test;
+    int checkingNextChar;
     data->productSize = 0;
     data->tagSize = 0;
     data->linkTableSize = 0;
     //checking for amount of lines in file to make data array
     do{
         fscanf(filePtr,"%[^\n]",buffer);
-        test = getc(filePtr);
+        checkingNextChar = getc(filePtr);
         data->productSize++;
     }
-    while(test != EOF);
+    while(checkingNextChar != EOF);
     //remove 1 for the extra line at the top and rewind the file to start
     data->productSize--;
     rewind(filePtr);
@@ -64,10 +64,10 @@ data_t* LoadDatabase(){
     data->products = malloc(sizeof (product_t) * data->productSize);
     //moving pointer 1 line
     fscanf(filePtr,"%[^\n]",buffer);
-    test =fgetc(filePtr);
+    checkingNextChar =fgetc(filePtr);
     int i = 0;
     //loop of making product_t with its tag_t and linking them with link_table_t
-    while (test != EOF){
+    while (checkingNextChar != EOF){
         //creating new product
         product_t* newProduct= malloc(sizeof(product_t));
         //variablers to temp hold variable values before storing them in product or tag
@@ -82,7 +82,7 @@ data_t* LoadDatabase(){
         fgetc(filePtr);
         fscanf(filePtr,"%lf",&newProduct->price);
         fgetc(filePtr);
-        fscanf(filePtr,"%lf",&newProduct->ppk);
+        fscanf(filePtr,"%lf",&newProduct->pricePerKilo);
         fgetc(filePtr);
         fscanf(filePtr,"%lf",&newProduct->weight);
         fgetc(filePtr);
@@ -133,7 +133,7 @@ data_t* LoadDatabase(){
                         found = j+1;
                     }
                 }
-                //if tag not found allocating for new arrays moving all data frying space and then moving pointer to data struct
+                //if tag not found allocating for new arrays moving all data releasing space and then moving pointer to data struct
                 if(!found)
                 {
                     data->tagSize++;
@@ -184,7 +184,7 @@ data_t* LoadDatabase(){
 
         data->products[i] = *newProduct;
         i++;
-        test =fgetc(filePtr);
+        checkingNextChar =fgetc(filePtr);
     }
     fclose(filePtr);
     return data;

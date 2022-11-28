@@ -11,7 +11,7 @@ typedef struct {
 typedef struct {
     char* name;
     double price;
-    double ppk;
+    double pricePerKilo;
     double weight;
     char* store;
     tag_t* first_tag;
