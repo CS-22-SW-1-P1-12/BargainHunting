@@ -91,7 +91,6 @@ data_t* LoadDatabase(){
         strcpy(newProduct->store,store);
         fgetc(filePtr);
         fgetc(filePtr);
-        newProduct->first_tag = NULL;
         int stopRun = 0;
         //making tags and taglink runs while stoprun is false
         while(!stopRun)

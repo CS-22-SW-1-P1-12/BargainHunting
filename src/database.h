@@ -14,7 +14,6 @@ typedef struct {
     double pricePerKilo;
     double weight;
     char* store;
-    tag_t* first_tag;
 }product_t;
 typedef struct {
     int indexOfTag;
