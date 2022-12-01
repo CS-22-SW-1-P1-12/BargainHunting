@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include "main.h"
 #include "CreateMenu.h"
-
+#include "ListEditor.h"
 /*
  * This function has the main loop and displays / returns the menu selected.
  * To make your own menu just copy this code and #include "CreateMenu.h"
@@ -45,6 +45,7 @@ void MainMenuScreen(){
 }
 
 int main(){
-    MainMenuScreen();
+    ListEditor();
+    //MainMenuScreen();
 
 }
