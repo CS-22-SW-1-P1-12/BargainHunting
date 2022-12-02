@@ -190,7 +190,7 @@ data_t* LoadDatabase(){
 }
 int GetStrLength(const char* string)
 {
-    int i= 1;
+    int i = 1;
     while(string[i]!= '\0')
     {
         i++;
