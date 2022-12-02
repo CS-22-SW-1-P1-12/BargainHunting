@@ -44,7 +44,7 @@ void MainMenuScreen(){
     }
 }
 
-int main(){
-    MainMenuScreen();
+//int main(){
+//    MainMenuScreen();
 
-}
+//}
