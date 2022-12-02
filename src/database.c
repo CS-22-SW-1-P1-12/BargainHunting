@@ -64,12 +64,12 @@ data_t* LoadDatabase(){
     data->products = malloc(sizeof (product_t) * data->productSize);
     //moving pointer 1 line
     fscanf(filePtr,"%[^\n]",buffer);
-    checkingNextChar =fgetc(filePtr);
+    checkingNextChar = fgetc(filePtr);
     int i = 0;
     //loop of making product_t with its tag_t and linking them with link_table_t
     while (checkingNextChar != EOF){
         //creating new product
-        product_t* newProduct= malloc(sizeof(product_t));
+        product_t* newProduct = malloc(sizeof(product_t));
         //variablers to temp hold variable values before storing them in product or tag
         char name[MAX_STR_LEN];
         char store[MAX_STR_LEN];
@@ -141,7 +141,7 @@ data_t* LoadDatabase(){
                     newTag->name = malloc(sizeof(char) * GetStrLength(tag));
                     strcpy(newTag->name,tag);
                     tag_t* tags = malloc(sizeof(tag_t)*data->tagSize);
-                    for(int j = 0; j <data->tagSize-1; j++ )
+                    for(int j = 0; j < data->tagSize-1; j++ )
                     {
                         tags[j] = data->tags[j];
                     }
@@ -156,7 +156,7 @@ data_t* LoadDatabase(){
                     data->linkTable = linkTable;
                     link_table_t newLink;
                     newLink.indexOfProduct = i;
-                    newLink.indexOfTag =  data->tagSize-1;
+                    newLink.indexOfTag = data->tagSize-1;
                     data->tags[data->tagSize-1] = *newTag;
                     data->linkTable[data->linkTableSize-1] = newLink;
                 }
@@ -173,7 +173,7 @@ data_t* LoadDatabase(){
                     data->linkTable = linkTable;
                     link_table_t newLink;
                     newLink.indexOfProduct = i;
-                    newLink.indexOfTag =  found-1;
+                    newLink.indexOfTag = found-1;
                     data->linkTable[data->linkTableSize-1] = newLink;
                 }
 
