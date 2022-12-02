@@ -114,8 +114,8 @@ data_t* LoadDatabase(){
                 tag_t* newTag = malloc(sizeof(tag_t));;
                 newTag->name = malloc(sizeof(char) * GetStrLength(tag));
                 strcpy(newTag->name,tag);
-                data->tags = malloc(sizeof(tag_t)*data->tagSize);
-                data->linkTable = malloc(sizeof(link_table_t)*data->linkTableSize);
+                data->tags = malloc(sizeof(tag_t) * data->tagSize);
+                data->linkTable = malloc(sizeof(link_table_t) * data->linkTableSize);
                 link_table_t newLink;
                 newLink.indexOfProduct = i;
                 newLink.indexOfTag =  data->tagSize -1;
@@ -137,18 +137,18 @@ data_t* LoadDatabase(){
                 {
                     data->tagSize++;
                     data->linkTableSize++;
-                    tag_t* newTag = malloc(sizeof(tag_t));;
+                    tag_t* newTag = malloc(sizeof(tag_t));
                     newTag->name = malloc(sizeof(char) * GetStrLength(tag));
                     strcpy(newTag->name,tag);
-                    tag_t* tags = malloc(sizeof(tag_t)*data->tagSize);
+                    tag_t* tags = malloc(sizeof(tag_t) * data->tagSize);
                     for(int j = 0; j < data->tagSize-1; j++ )
                     {
                         tags[j] = data->tags[j];
                     }
                     free(data->tags);
                     data->tags = tags;
-                    link_table_t* linkTable = malloc(sizeof(link_table_t)*data->linkTableSize);
-                    for(int j = 0; j <data->linkTableSize-1; j++ )
+                    link_table_t* linkTable = malloc(sizeof(link_table_t) * data->linkTableSize);
+                    for(int j = 0; j <data->linkTableSize-1; j++)
                     {
                         linkTable[j] = data->linkTable[j];
                     }
@@ -164,8 +164,8 @@ data_t* LoadDatabase(){
                 {
                     //if tag found doing same as above just without adding a new tag
                     data->linkTableSize++;
-                    link_table_t* linkTable = malloc(sizeof(link_table_t)*data->linkTableSize);
-                    for(int j = 0; j <data->linkTableSize-1; j++ )
+                    link_table_t* linkTable = malloc(sizeof(link_table_t) * data->linkTableSize);
+                    for(int j = 0; j <data->linkTableSize-1; j++)
                     {
                         linkTable[j] = data->linkTable[j];
                     }
