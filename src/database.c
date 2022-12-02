@@ -61,7 +61,7 @@ data_t* LoadDatabase(){
     data->productSize--;
     rewind(filePtr);
     //allocating enough space for the products
-    data->products = malloc(sizeof (product_t) * data->productSize);
+    data->products = malloc(sizeof(product_t) * data->productSize);
     //moving pointer 1 line
     fscanf(filePtr,"%[^\n]",buffer);
     checkingNextChar = fgetc(filePtr);
