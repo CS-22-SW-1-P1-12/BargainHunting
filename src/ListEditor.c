@@ -10,7 +10,7 @@
  *  shoppingList[20][50] is shitty
  */
 
-void getExistingLists(char *test) {
+void GetExistingLists(char *test) {
     char arr[20][50] = {"Create New List"};
 
     int count2 = 1;
@@ -19,7 +19,7 @@ void getExistingLists(char *test) {
     dr = opendir("./data/shopping_list/"); //open all or present directory
     if (dr) {
         while ((en = readdir(dr)) != NULL) {
-            if (strcmp(en->d_name,".") == 0 || strcmp(en->d_name,"..") == 0){
+            if (strcmp(en->d_name, ".") == 0 || strcmp(en->d_name, "..") == 0) {
                 continue;
             }
             strcpy(arr[count2], en->d_name);
@@ -30,16 +30,27 @@ void getExistingLists(char *test) {
 
 
     int result = CreateMenu(arr);
-    for (int i = 0; i < count2 - 1; ++i) {
-        if (i == result) {
-            //printf("%s", arr[i-1]);
-            if(result == 1){
 
-            }
-            strcpy(test, arr[i - 1]);
+    if (result == 1) {
+        char newlist[50];
+        printf("Write your list name: \n");
+        scanf("%s", newlist);
+        FILE *filePtr;
+        char path[50] = "./data/shopping_list/";
+        strcat(path, newlist);
+        filePtr = fopen(path, "w");
+        if (filePtr == NULL) {
+            exit(EXIT_FAILURE);
         }
+        fprintf(filePtr, " ");
+        fclose(filePtr);
+        strcpy(test, newlist);
+    } else if (count2 >= result) {
+        strcpy(test, arr[result - 1]);
     }
+
 }
+
 /*
  * making a selection list to get the user to select the list they want to modify
  *
@@ -47,7 +58,7 @@ void getExistingLists(char *test) {
  */
 void ListEditor() {
     char listName[50];
-    getExistingLists(listName);
+    GetExistingLists(listName);
     //printf("%s", listName);
     char path[50] = "./data/shopping_list/";
     strcat(path, listName);
@@ -80,9 +91,9 @@ void ListEditor() {
             fclose(filePtr);
             break;
         } else if (result == 2) {
-            printf("Enter product name");
+            printf("Enter product name\n");
             scanf("%s", shoppingList[count]);
-            fprintf(filePtr, "\n%s", shoppingList[count]);
+            fprintf(filePtr, "%s\n", shoppingList[count]);
             count++;
         } else {
             if (result <= count) {

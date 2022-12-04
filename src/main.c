@@ -32,6 +32,7 @@ void MainMenuScreen(){
             case 3:
                 // Open up the List menu and start the List function
                 printf("Opening List menu");
+                ListEditor();
                 break;
             case 4:
                 // Open up the Settings menu and start the Settings function
@@ -45,7 +46,6 @@ void MainMenuScreen(){
 }
 
 int main(){
-    ListEditor();
-    //MainMenuScreen();
+    MainMenuScreen();
 
 }
