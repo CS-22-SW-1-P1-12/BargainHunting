@@ -17,11 +17,11 @@ void GetSearchedInput(char* input) {
     scanf("%s", input);
 }
 */
-void SearchDatabase(const char searchTerm[MAX_SEARCH_LEN], data_t* database){
-    /*
+/*void SearchDatabase(const char searchTerm[MAX_SEARCH_LEN], data_t* database){
+
      * arr[] = {p1 name, p1 price, p1 ppk},
      *         {p2 name, p2 price, p2 ppk}
-    */
+
     int indexOfMatchingProducts[MAX_OPTIONS] = {0};
 
     product_t* product = database->firstProduct;
@@ -62,22 +62,56 @@ void SearchDatabase(const char searchTerm[MAX_SEARCH_LEN], data_t* database){
             printf("this is saved index of nr %d product matching search: %d\n", j+1, indexOfMatchingProducts[j]);
         }
     }
-    /*product_t* currentProduct = foundProducts->firstProduct;
+     product_t* currentProduct = foundProducts->firstProduct;
     printf("The found products are:\n");
     while(currentProduct != NULL){
         printf("%s", currentProduct->name);
         currentProduct = currentProduct->nextProduct;
-    } */
+    }
 
+}*/
+
+void SearchProduct(const char searchTerm[MAX_SEARCH_LEN], data_t* database, data_t* found_products){
+
+    for (int i = 0; i < database->productSize; ++i) {
+
+        if(!strcmp(searchTerm, database->products[i].name))
+        {
+            found_products->productSize++;
+            found_products->products[found_products->productSize-1] = database->products[i];
+        }
+    }
 }
 
-void SearchProduct(const char searchTerm[MAX_SEARCH_LEN], data_t* database){
-    data_t* found_products
+void SearchTag(const char searchTerm[MAX_SEARCH_LEN], data_t* database, data_t* found_products){
+
+    for (int i = 0; i < database->tagSize; ++i) {
+        if(!strcmp(searchTerm, database->tags[i].name))
+        {
+            for (int x = 0; x < database->linkTableSize; ++x) {
+                if(database->linkTable[x].indexOfTag == i)
+                {
+                    int indexOfFoundProduct = database->linkTable[x].indexOfProduct;
+                    found_products->productSize++;
+                    found_products->products[found_products->productSize-1] = database->products[indexOfFoundProduct];
+                }
+            }
+        }
+    }
 }
 
-int Search(data_t* database){
+data_t* SearchData(const char searchTerm[MAX_SEARCH_LEN], data_t* database){
+    data_t* found_products;
+
+    SearchProduct(searchTerm, database, found_products);
+    SearchTag(searchTerm, database, found_products);
+
+    found_products;
+}
+
+/*int Search(data_t* database){
     char input[MAX_SEARCH_LEN] = "chickenstrips";
     //GetSearchedInput(input); // redefine input to user string
 
     SearchDatabase(input, database);
-}
+}*/
