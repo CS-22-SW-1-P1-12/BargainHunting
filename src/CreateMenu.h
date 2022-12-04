@@ -6,8 +6,8 @@
 #define BARGAINHUNTING_CREATEMENU_H
 
 #define MAX_OPTIONS 20
-#define MAX_STRLEN 50
+#define MAX_STRLEN 255
 
 #endif //BARGAINHUNTING_CREATEMENU_H
 
-int CreateMenu(char options[20][50]);
+int CreateMenu(char options[MAX_OPTIONS][MAX_STRLEN]);
