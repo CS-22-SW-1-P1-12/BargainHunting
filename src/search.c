@@ -9,31 +9,45 @@
 #include "CreateMenu.h"
 #include <string.h>
 #define MAX_SEARCH_LEN 20
-
+#define MAX_FOUND_PRODUCTS 100
 
 //REMEMBER TO FREE AT SOME POINT
 
-data_t* SearchData(const char searchTerm[MAX_SEARCH_LEN], data_t* database);
+void SearchData(const char searchTerm[MAX_SEARCH_LEN], data_t* database, int indexOfFoundProducts[MAX_FOUND_PRODUCTS]);
 
 int main(){
     data_t* data = LoadDatabase();
 
     printf("Successfully loaded database\n");
 
-    data_t* found_products = SearchData("monster energy drink", data);
+    int indexOfFoundProducts[MAX_FOUND_PRODUCTS];
+
+    SearchData("meat", data, indexOfFoundProducts);
+
+    for (int i = 0; i < 3; ++i) {
+        printf("number %d: %d\n", i, indexOfFoundProducts[i]);
+    }
 
     printf("Successfully searched for products\n");
 
-    for (int i = 0; i < found_products->productSize; ++i) {
-        printf("name: %s price: %.2lf kr. price per kilo: %.2lf weight: %.2lf kg store: %s tags: ",found_products->products[i].name,found_products->products[i].price,found_products->products[i].pricePerKilo,found_products->products[i].weight,found_products->products[i].store);
+    int x = 0;
 
-        for (int j = 0; j < data->linkTableSize; ++j) {
-            if(i == data->linkTable[j].indexOfProduct)
-            {
-                printf("%s, ",data->tags[data->linkTable[j].indexOfTag].name);
+    for (int i = 0; i < data->productSize; ++i) {
+
+        if(i == indexOfFoundProducts[x])
+        {
+            printf("name: %s price: %.2lf kr. price per kilo: %.2lf weight: %.2lf kg store: %s tags: ",data->products[i].name,data->products[i].price,data->products[i].pricePerKilo,data->products[i].weight,data->products[i].store);
+
+            for (int j = 0; j < data->linkTableSize; ++j) {
+                if(i == data->linkTable[j].indexOfProduct)
+                {
+                    printf("%s, ",data->tags[data->linkTable[j].indexOfTag].name);
+                }
             }
+            printf("\n");
+            x++;
         }
-        printf("\n");
+
     }
     return 0;
 }
@@ -98,35 +112,22 @@ void GetSearchedInput(char* input) {
 
 }*/
 
-void SearchProduct(const char searchTerm[MAX_SEARCH_LEN], data_t* database, data_t* found_products){
+void SearchProduct(const char searchTerm[MAX_SEARCH_LEN], data_t* database, int indexOfFoundProducts[MAX_FOUND_PRODUCTS], int* numberOfFoundProducts){
 
-    int index_of_found_products[100];
-    for (int i = 0; i < database->productSize; ++i) {
+
+    for (int i = 0; i < database->productSize; i++) {
 
         if(!strcmp(searchTerm, database->products[i].name))
         {
-            found_products->productSize++;
-            printf("sus\n");
-            index_of_found_products[found_products->productSize-1] = i;
+            indexOfFoundProducts[*numberOfFoundProducts] = i;
+            *numberOfFoundProducts += 1;
             printf("found product!\n");
         }
-    }
-    found_products->products = malloc(sizeof(product_t) * found_products->productSize);
-    if(found_products->products == NULL)
-    {
-        printf("cry");
-        exit(-1);
-    }
-    for (int i = 0; i < found_products->productSize; ++i) {
-        found_products->products[i] = database->products[index_of_found_products[i]];
     }
 
 }
 
-void SearchTag(const char searchTerm[MAX_SEARCH_LEN], data_t* database, data_t* found_products){
-
-    int numberOfMatchingNames = found_products->productSize;
-    int index_of_found_products[100];
+void SearchTag(const char searchTerm[MAX_SEARCH_LEN], data_t* database, int indexOfFoundProducts[MAX_FOUND_PRODUCTS], int* numberOfFoundProducts){
 
     for (int i = 0; i < database->tagSize; ++i) {
         if(!strcmp(searchTerm, database->tags[i].name))
@@ -134,30 +135,22 @@ void SearchTag(const char searchTerm[MAX_SEARCH_LEN], data_t* database, data_t* 
             for (int x = 0; x < database->linkTableSize; ++x) {
                 if(database->linkTable[x].indexOfTag == i)
                 {
-                    int indexOfFoundProduct = database->linkTable[x].indexOfProduct;
-                    found_products->productSize++;
-                    index_of_found_products[found_products->productSize-1] = i;
+                    indexOfFoundProducts[*numberOfFoundProducts] = database->linkTable[x].indexOfProduct;
+                    *numberOfFoundProducts += 1;
+                    printf("found product!\n");
                 }
             }
         }
     }
-    found_products->products = realloc(found_products->products, sizeof(product_t) * found_products->productSize);
-    for (int i = numberOfMatchingNames; i < found_products->productSize; ++i) {
-        found_products->products[i] = database->products[index_of_found_products[i]];
-    }
 }
 
-data_t* SearchData(const char searchTerm[MAX_SEARCH_LEN], data_t* database){
-    data_t* found_products = malloc(sizeof(data_t));
-
-    found_products->productSize = 0;
+void SearchData(const char searchTerm[MAX_SEARCH_LEN], data_t* database, int indexOfFoundProducts[MAX_FOUND_PRODUCTS]){
+    int numberOfFoundProducts = 0;
 
     printf("Beginning search\n");
-    SearchProduct(searchTerm, database, found_products);
+    SearchProduct(searchTerm, database, indexOfFoundProducts, &numberOfFoundProducts);
     printf("Beginning tag search\n");
-    SearchTag(searchTerm, database, found_products);
-
-    return found_products;
+    SearchTag(searchTerm, database, indexOfFoundProducts, &numberOfFoundProducts);
 }
 
 /*int Search(data_t* database){
