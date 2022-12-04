@@ -3,9 +3,6 @@
 #include <stdio.h>
 #include<string.h>
 
-#define MAX_OPTIONS 20
-#define MAX_STRLEN 50
-
 // return the amount of elements inside of options
 int Counter(char options[MAX_OPTIONS][MAX_STRLEN]){
     int count;

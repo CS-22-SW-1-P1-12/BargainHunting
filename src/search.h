@@ -1,0 +1,8 @@
+//
+// Created by sinag on 02.12.2022.
+//
+
+#ifndef BARGAINHUNTING_SEARCH_H
+#define BARGAINHUNTING_SEARCH_H
+
+#endif //BARGAINHUNTING_SEARCH_H
