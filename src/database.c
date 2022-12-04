@@ -9,6 +9,7 @@
 #include <string.h>
 #include "database.h"
 #define MAX_STR_LEN 20
+/*
 int main(){
     data_t* data = LoadDatabase();
 //    product_t*  product = data->firstProduct;
@@ -36,7 +37,7 @@ int main(){
         printf("\n");
     }
     return 0;
-}
+}*/
 data_t* LoadDatabase(){
     FILE* filePtr;
     filePtr = fopen("data/data.txt","r");
