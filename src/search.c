@@ -7,25 +7,14 @@
 #include <stdio.h>
 #include "CreateMenu.h"
 #include <string.h>
-#define MAX_SEARCH_LEN 20
-#define MAX_FOUND_PRODUCTS 100
 
 //REMEMBER TO FREE AT SOME POINT
 
-int SearchData(const char searchTerm[MAX_SEARCH_LEN], data_t* database, int indexOfFoundProducts[MAX_FOUND_PRODUCTS]);
-void GetSearchedProduct(char SearchTerm[MAX_SEARCH_LEN]);
-void SearchMenu(data_t* data, const int indexOfFoundProducts[MAX_FOUND_PRODUCTS]);
 
-int main(){
-    data_t* data = LoadDatabase();
-
-    printf("Successfully loaded database\n");
-
+int ProductSearch(data_t* data){
     int indexOfFoundProducts[MAX_FOUND_PRODUCTS];
     char SearchTerm[MAX_SEARCH_LEN];
-
     int numberOfFoundProducts = 0;
-
     while(numberOfFoundProducts == 0)
     {
         GetSearchedProduct(SearchTerm);
@@ -35,9 +24,7 @@ int main(){
             printf("No products matching search\n");
         }
     }
-
-    SearchMenu(data, indexOfFoundProducts);
-    return 0;
+    return SearchMenu(data, indexOfFoundProducts);
 }
 
 void SearchProduct(const char searchTerm[MAX_SEARCH_LEN], data_t* database, int indexOfFoundProducts[MAX_FOUND_PRODUCTS], int* numberOfFoundProducts){
@@ -81,7 +68,7 @@ void GetSearchedProduct(char SearchTerm[MAX_SEARCH_LEN]){
     scanf("%s", SearchTerm);
 }
 
-void SearchMenu(data_t* data, const int indexOfFoundProducts[MAX_FOUND_PRODUCTS]){
+int SearchMenu(data_t* data, const int indexOfFoundProducts[MAX_FOUND_PRODUCTS]){
 
     char options[MAX_OPTIONS][MAX_STRLEN];
 
@@ -99,6 +86,5 @@ void SearchMenu(data_t* data, const int indexOfFoundProducts[MAX_FOUND_PRODUCTS]
         }
     }
 
-    printf("now creating menu");
-    CreateMenu(options);
+    return CreateMenu(options);
 }

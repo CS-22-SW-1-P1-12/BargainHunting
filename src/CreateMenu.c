@@ -30,7 +30,7 @@ void Draw(char options[MAX_OPTIONS][MAX_STRLEN]){
 int ScanInput(int items){
     int result;
     while(1){
-        printf("\n\nPlease input the number corrisponding to your desired option: ");
+        printf("\n\nPlease input the number corresponding to your desired option: ");
         scanf("%d", &result); // replace with a better scanning method
         if(result > 0 && result <= items){
             return result;
