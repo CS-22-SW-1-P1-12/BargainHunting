@@ -1,0 +1,9 @@
+//
+// Created by manta on 01/12/2022.
+//
+
+#ifndef BARGAINHUNTING_LISTEDITOR_H
+#define BARGAINHUNTING_LISTEDITOR_H
+void ListEditor();
+
+#endif //BARGAINHUNTING_LISTEDITOR_H

@@ -21,7 +21,7 @@ void Draw(char options[MAX_OPTIONS][MAX_STRLEN]){
     printf("-------------------------------------------------");
 
     for (int i = 0; i < amountOfElements; ++i) {
-        printf("\n %d) for %s\n-------------------------------------------------", i+1, options[i]);
+        printf("\n %d) %s\n-------------------------------------------------", i+1, options[i]);
 
     }
 }
