@@ -72,10 +72,6 @@ int SearchMenu(data_t* data, const int indexOfFoundProducts[MAX_FOUND_PRODUCTS])
 
     char options[MAX_OPTIONS][MAX_STRLEN];
 
-    /*for (int i = 0; i <= numberOfFoundProducts; ++i) {
-        snprintf(options[i], sizeof(options[i]), "name: %s price: %.2lf kr. price per kilo: %.2lf weight: %.2lf kg store: %s tags: ",data->products[i].name,data->products[i].price,data->products[i].pricePerKilo,data->products[i].weight,data->products[i].store);
-    }*/
-
     int x = 0;
     for (int i = 0; i < data->productSize; ++i) {
 
@@ -86,5 +82,6 @@ int SearchMenu(data_t* data, const int indexOfFoundProducts[MAX_FOUND_PRODUCTS])
         }
     }
 
-    return CreateMenu(options);
+    int option = CreateMenu(options);
+    return indexOfFoundProducts[option - 1];
 }
