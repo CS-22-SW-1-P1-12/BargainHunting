@@ -70,10 +70,10 @@ void PrintList(char** lines){
     printf("\n");
 }
 
-void * main()
-{
-    char* fileName = "preferencesTest.txt";
-    char** lines = LoadUserPreferences(fileName);
-    PrintList(lines);
-    return 0;
-}
+//void * main()
+//{
+//    char* fileName = "preferencesTest.txt";
+//    char** lines = LoadUserPreferences(fileName);
+//    PrintList(lines);
+//    return 0;
+//}
