@@ -9,8 +9,8 @@
 #include <string.h>
 #include "database.h"
 #define MAX_STR_LEN 20
-int main(){
-    data_t* data = LoadDatabase();
+//int main(){
+  //  data_t* data = LoadDatabase();
 //    product_t*  product = data->firstProduct;
 //    while(product != NULL)
 //    {
@@ -24,19 +24,19 @@ int main(){
 //        printf("\n");
 //        product = product->nextProduct;
 //    }
-    for (int i = 0; i < data->productSize; ++i) {
-       printf("name: %s price: %.2lf kr. price per kilo: %.2lf weight: %.2lf kg store: %s tags: ",data->products[i].name,data->products[i].price,data->products[i].pricePerKilo,data->products[i].weight,data->products[i].store);
-
-        for (int j = 0; j < data->linkTableSize; ++j) {
-            if(i == data->linkTable[j].indexOfProduct)
-            {
-                printf("%s, ",data->tags[data->linkTable[j].indexOfTag].name);
-            }
-        }
-        printf("\n");
-    }
-    return 0;
-}
+//    for (int i = 0; i < data->productSize; ++i) {
+//       printf("name: %s price: %.2lf kr. price per kilo: %.2lf weight: %.2lf kg store: %s tags: ",data->products[i].name,data->products[i].price,data->products[i].pricePerKilo,data->products[i].weight,data->products[i].store);
+//
+//        for (int j = 0; j < data->linkTableSize; ++j) {
+//            if(i == data->linkTable[j].indexOfProduct)
+//            {
+//                printf("%s, ",data->tags[data->linkTable[j].indexOfTag].name);
+//            }
+//        }
+//        printf("\n");
+//    }
+//    return 0;
+//}
 data_t* LoadDatabase(){
     FILE* filePtr;
     filePtr = fopen("data/data.txt","r");
@@ -46,7 +46,7 @@ data_t* LoadDatabase(){
     }
     data_t* data = malloc(sizeof(data_t));
     char buffer[100];
-    int checkingNextChar;
+    int checkingNextChar;   //hvorfor int?
     data->productSize = 0;
     data->tagSize = 0;
     data->linkTableSize = 0;
