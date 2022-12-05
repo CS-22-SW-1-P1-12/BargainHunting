@@ -18,10 +18,18 @@ int ProductSearch(data_t* data){
     while(numberOfFoundProducts == 0)
     {
         GetSearchedProduct(SearchTerm);
-        numberOfFoundProducts = SearchData(SearchTerm, data, indexOfFoundProducts);
-        if(numberOfFoundProducts == 0)
+        if(strcmp(SearchTerm, "q") != 0)
         {
-            printf("No products matching search\n");
+            numberOfFoundProducts = SearchData(SearchTerm, data, indexOfFoundProducts);
+            if(numberOfFoundProducts == 0)
+            {
+                printf("No products matching search\n");
+            }
+        }
+        else
+        {
+            printf("Going back");
+            return -1;
         }
     }
     return SearchMenu(data, indexOfFoundProducts);
@@ -64,7 +72,7 @@ int SearchData(const char searchTerm[MAX_SEARCH_LEN], data_t* database, int inde
 }
 
 void GetSearchedProduct(char SearchTerm[MAX_SEARCH_LEN]){
-    printf("Please input the desired product >");
+    printf("Please input the desired product or q for quit >");
     scanf("%s", SearchTerm);
 }
 
