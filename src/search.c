@@ -90,6 +90,6 @@ int SearchMenu(data_t* data, const int indexOfFoundProducts[MAX_FOUND_PRODUCTS])
         }
     }
 
-    int option = CreateMenu(options);
-    return indexOfFoundProducts[option - 1];
+    int option = CreateMenu(options) - 1;
+    return indexOfFoundProducts[option];
 }
