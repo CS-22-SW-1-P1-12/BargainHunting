@@ -5,7 +5,6 @@
 #include "search.h"
 #include "database.h"
 #include <stdio.h>
-#include <stdlib.h>
 #include "CreateMenu.h"
 #include <string.h>
 #define MAX_SEARCH_LEN 20
@@ -14,8 +13,8 @@
 //REMEMBER TO FREE AT SOME POINT
 
 int SearchData(const char searchTerm[MAX_SEARCH_LEN], data_t* database, int indexOfFoundProducts[MAX_FOUND_PRODUCTS]);
-void GetSearchedProduct(data_t* database, char SearchTerm[MAX_SEARCH_LEN]);
-void SearchMenu(data_t* data, int indexOfFoundProducts[MAX_FOUND_PRODUCTS], int numberOfFoundProducts);
+void GetSearchedProduct(char SearchTerm[MAX_SEARCH_LEN]);
+void SearchMenu(data_t* data, const int indexOfFoundProducts[MAX_FOUND_PRODUCTS]);
 
 int main(){
     data_t* data = LoadDatabase();
@@ -29,7 +28,7 @@ int main(){
 
     while(numberOfFoundProducts == 0)
     {
-        GetSearchedProduct(data, SearchTerm);
+        GetSearchedProduct(SearchTerm);
         numberOfFoundProducts = SearchData(SearchTerm, data, indexOfFoundProducts);
         if(numberOfFoundProducts == 0)
         {
@@ -37,28 +36,7 @@ int main(){
         }
     }
 
-    SearchMenu(data, indexOfFoundProducts, numberOfFoundProducts);
-
-    /*
-    printf("Successfully searched for products\n");
-    int x = 0;
-    for (int i = 0; i < data->productSize; ++i) {
-
-        if(i == indexOfFoundProducts[x])
-        {
-            printf("name: %s price: %.2lf kr. price per kilo: %.2lf weight: %.2lf kg store: %s tags: ",data->products[i].name,data->products[i].price,data->products[i].pricePerKilo,data->products[i].weight,data->products[i].store);
-
-            for (int j = 0; j < data->linkTableSize; ++j) {
-                if(i == data->linkTable[j].indexOfProduct)
-                {
-                    printf("%s, ",data->tags[data->linkTable[j].indexOfTag].name);
-                }
-            }
-            printf("\n");
-            x++;
-        }
-
-    }*/
+    SearchMenu(data, indexOfFoundProducts);
     return 0;
 }
 
@@ -98,12 +76,12 @@ int SearchData(const char searchTerm[MAX_SEARCH_LEN], data_t* database, int inde
     return numberOfFoundProducts;
 }
 
-void GetSearchedProduct(data_t* database, char SearchTerm[MAX_SEARCH_LEN]){
+void GetSearchedProduct(char SearchTerm[MAX_SEARCH_LEN]){
     printf("Please input the desired product >");
     scanf("%s", SearchTerm);
 }
 
-void SearchMenu(data_t* data, int indexOfFoundProducts[MAX_FOUND_PRODUCTS], int numberOfFoundProducts){
+void SearchMenu(data_t* data, const int indexOfFoundProducts[MAX_FOUND_PRODUCTS]){
 
     char options[MAX_OPTIONS][MAX_STRLEN];
 
