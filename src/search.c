@@ -32,17 +32,27 @@ int ProductSearch(data_t* data){
             return -1;
         }
     }
-    return SearchMenu(data, indexOfFoundProducts);
+    return SearchMenu(data, indexOfFoundProducts, numberOfFoundProducts);
+}
+
+int NumberInArray(int number, const int* array, int arraySize) {
+    for (int i = 0; i < arraySize; ++i) {
+        if (array[i] == number) {
+            return 1;
+        }
+    }
+    return 0;
 }
 
 void SearchProduct(const char searchTerm[MAX_SEARCH_LEN], data_t* database, int indexOfFoundProducts[MAX_FOUND_PRODUCTS], int* numberOfFoundProducts){
 
     for (int i = 0; i < database->productSize; i++) {
 
-        if(strstr(database->products[i].name, searchTerm))
+        if(!strcmp(database->products[i].name, searchTerm) && !NumberInArray(i, indexOfFoundProducts, *numberOfFoundProducts))
         {
             indexOfFoundProducts[*numberOfFoundProducts] = i;
             *numberOfFoundProducts += 1;
+            printf("found through name\n");
         }
     }
 
@@ -51,13 +61,39 @@ void SearchProduct(const char searchTerm[MAX_SEARCH_LEN], data_t* database, int 
 void SearchTag(const char searchTerm[MAX_SEARCH_LEN], data_t* database, int indexOfFoundProducts[MAX_FOUND_PRODUCTS], int* numberOfFoundProducts){
 
     for (int i = 0; i < database->tagSize; ++i) {
-        if(strstr(database->tags[i].name, searchTerm))
+        if(!strcmp(database->tags[i].name, searchTerm))
         {
             for (int x = 0; x < database->linkTableSize; ++x) {
-                if(database->linkTable[x].indexOfTag == i)
+                if(database->linkTable[x].indexOfTag == i && !NumberInArray(database->linkTable[x].indexOfProduct, indexOfFoundProducts, *numberOfFoundProducts))
                 {
                     indexOfFoundProducts[*numberOfFoundProducts] = database->linkTable[x].indexOfProduct;
                     *numberOfFoundProducts += 1;
+                    printf("found through tag\n");
+                }
+            }
+        }
+    }
+}
+
+void BroadSearch(const char searchTerm[MAX_SEARCH_LEN], data_t* database, int indexOfFoundProducts[MAX_FOUND_PRODUCTS], int* numberOfFoundProducts){
+    for (int i = 0; i < database->productSize; i++) {
+
+        if(strstr(database->products[i].name, searchTerm) && !NumberInArray(i, indexOfFoundProducts, *numberOfFoundProducts))
+        {
+            indexOfFoundProducts[*numberOfFoundProducts] = i;
+            *numberOfFoundProducts += 1;
+            printf("found through name (broad)\n");
+        }
+    }
+    for (int i = 0; i < database->tagSize; ++i) {
+        if(strstr(database->tags[i].name, searchTerm))
+        {
+            for (int x = 0; x < database->linkTableSize; ++x) {
+                if(database->linkTable[x].indexOfTag == i && !NumberInArray(database->linkTable[x].indexOfProduct, indexOfFoundProducts, *numberOfFoundProducts))
+                {
+                    indexOfFoundProducts[*numberOfFoundProducts] = database->linkTable[x].indexOfProduct;
+                    *numberOfFoundProducts += 1;
+                    printf("found through tag (broad)\n");
                 }
             }
         }
@@ -68,6 +104,7 @@ int SearchData(const char searchTerm[MAX_SEARCH_LEN], data_t* database, int inde
     int numberOfFoundProducts = 0;
     SearchProduct(searchTerm, database, indexOfFoundProducts, &numberOfFoundProducts);
     SearchTag(searchTerm, database, indexOfFoundProducts, &numberOfFoundProducts);
+    BroadSearch(searchTerm, database, indexOfFoundProducts, &numberOfFoundProducts);
     return numberOfFoundProducts;
 }
 
@@ -76,17 +113,16 @@ void GetSearchedProduct(char SearchTerm[MAX_SEARCH_LEN]){
     scanf(" %[^\n]s", SearchTerm);
 }
 
-int SearchMenu(data_t* data, const int indexOfFoundProducts[MAX_FOUND_PRODUCTS]){
+int SearchMenu(data_t* data, const int indexOfFoundProducts[MAX_FOUND_PRODUCTS], int numberOfFoundProducts){
 
     char options[MAX_OPTIONS][MAX_STRLEN];
 
-    int x = 0;
-    for (int i = 0; i < data->productSize; ++i) {
-
-        if(i == indexOfFoundProducts[x])
-        {
-            snprintf(options[x], sizeof(options[x]), "name: %s price: %.2lf kr. price per kilo: %.2lf weight: %.2lf kg store: %s",data->products[i].name,data->products[i].price,data->products[i].pricePerKilo,data->products[i].weight,data->products[i].store);
-            x++;
+    printf("going to try printing this");
+    for (int i = 0; i < numberOfFoundProducts; ++i) {
+        for (int x = 0; x < data->productSize; ++x) {
+            if(x == indexOfFoundProducts[i]) {
+                snprintf(options[i], sizeof(options[i]), "name: %s price: %.2lf kr. price per kilo: %.2lf weight: %.2lf kg store: %s",data->products[x].name,data->products[x].price,data->products[x].pricePerKilo,data->products[x].weight,data->products[x].store);
+            }
         }
     }
 
