@@ -52,7 +52,6 @@ void SearchProduct(const char searchTerm[MAX_SEARCH_LEN], data_t* database, int 
         {
             indexOfFoundProducts[*numberOfFoundProducts] = i;
             *numberOfFoundProducts += 1;
-            printf("found through name\n");
         }
     }
 
@@ -68,7 +67,6 @@ void SearchTag(const char searchTerm[MAX_SEARCH_LEN], data_t* database, int inde
                 {
                     indexOfFoundProducts[*numberOfFoundProducts] = database->linkTable[x].indexOfProduct;
                     *numberOfFoundProducts += 1;
-                    printf("found through tag\n");
                 }
             }
         }
@@ -82,7 +80,6 @@ void BroadSearch(const char searchTerm[MAX_SEARCH_LEN], data_t* database, int in
         {
             indexOfFoundProducts[*numberOfFoundProducts] = i;
             *numberOfFoundProducts += 1;
-            printf("found through name (broad)\n");
         }
     }
     for (int i = 0; i < database->tagSize; ++i) {
@@ -93,7 +90,6 @@ void BroadSearch(const char searchTerm[MAX_SEARCH_LEN], data_t* database, int in
                 {
                     indexOfFoundProducts[*numberOfFoundProducts] = database->linkTable[x].indexOfProduct;
                     *numberOfFoundProducts += 1;
-                    printf("found through tag (broad)\n");
                 }
             }
         }
@@ -117,7 +113,6 @@ int SearchMenu(data_t* data, const int indexOfFoundProducts[MAX_FOUND_PRODUCTS],
 
     char options[MAX_OPTIONS][MAX_STRLEN];
 
-    printf("going to try printing this");
     for (int i = 0; i < numberOfFoundProducts; ++i) {
         for (int x = 0; x < data->productSize; ++x) {
             if(x == indexOfFoundProducts[i]) {
