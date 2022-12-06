@@ -39,7 +39,7 @@ void SearchProduct(const char searchTerm[MAX_SEARCH_LEN], data_t* database, int 
 
     for (int i = 0; i < database->productSize; i++) {
 
-        if(!strcmp(searchTerm, database->products[i].name))
+        if(strstr(database->products[i].name, searchTerm))
         {
             indexOfFoundProducts[*numberOfFoundProducts] = i;
             *numberOfFoundProducts += 1;
@@ -51,7 +51,7 @@ void SearchProduct(const char searchTerm[MAX_SEARCH_LEN], data_t* database, int 
 void SearchTag(const char searchTerm[MAX_SEARCH_LEN], data_t* database, int indexOfFoundProducts[MAX_FOUND_PRODUCTS], int* numberOfFoundProducts){
 
     for (int i = 0; i < database->tagSize; ++i) {
-        if(!strcmp(searchTerm, database->tags[i].name))
+        if(strstr(database->tags[i].name, searchTerm))
         {
             for (int x = 0; x < database->linkTableSize; ++x) {
                 if(database->linkTable[x].indexOfTag == i)
@@ -73,7 +73,7 @@ int SearchData(const char searchTerm[MAX_SEARCH_LEN], data_t* database, int inde
 
 void GetSearchedProduct(char SearchTerm[MAX_SEARCH_LEN]){
     printf("Please input the desired product or q for quit >");
-    scanf("%s", SearchTerm);
+    scanf(" %[^\n]s", SearchTerm);
 }
 
 int SearchMenu(data_t* data, const int indexOfFoundProducts[MAX_FOUND_PRODUCTS]){
