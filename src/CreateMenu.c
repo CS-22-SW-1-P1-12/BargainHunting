@@ -28,10 +28,12 @@ void Draw(char options[MAX_OPTIONS][MAX_STRLEN]){
 
 // return the selected option (1,2,3,4,....)
 int ScanInput(int items){
-    int result;
+    char option[MAX_STRLEN];
+    char* ptr;
     while(1){
         printf("\n\nPlease input the number corresponding to your desired option: ");
-        scanf("%d", &result); // replace with a better scanning method
+        scanf("%s", option); // replace with a better scanning method
+        int result = strtol(option, &ptr, 10);
         if(result > 0 && result <= items){
             return result;
         }
