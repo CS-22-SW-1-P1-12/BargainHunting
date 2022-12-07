@@ -16,7 +16,7 @@ int main(){
     char** stores = ListOfStores(data, &numberOfStores);
 
     for (int i = 0; i < numberOfStores; ++i) {
-        printf("%s", stores[i]);
+        printf("%s\n", stores[i]);
     }
 
 }
@@ -189,7 +189,6 @@ char** ListOfStores(data_t* data, int* numberOfStores){
     for (int i = 0; i < data->productSize; ++i) {
         stores[i] = malloc(sizeof(char) * MAX_STR_LEN);
     }
-    printf("Not crashed yet?\n");
 
     for (int i = 0; i < data->productSize; ++i) {
         int found = 0;
@@ -201,8 +200,7 @@ char** ListOfStores(data_t* data, int* numberOfStores){
         }
         if(!found)
         {
-            *numberOfStores++;
-            printf("Not crashed yet?\n");
+            *numberOfStores += 1;
             strcpy(stores[*numberOfStores-1], data->products[i].store);
         }
     }
