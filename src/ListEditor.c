@@ -42,7 +42,9 @@ void GetExistingLists(char *test) {
 		strcpy(test, newlist);
 	} else if(result == 2) {
 		//letting function end
-	} else if(count2 >= result) {
+        strcpy(test, "quit");
+
+    } else if(count2 >= result) {
 		strcpy(test, arr[result - 1]);
 	}
 }
