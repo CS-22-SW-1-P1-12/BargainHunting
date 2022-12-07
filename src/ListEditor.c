@@ -73,11 +73,11 @@ void ListEditor() {
 	if(filePtr == NULL) {
 		exit(EXIT_FAILURE);
 	}
-	char shoppingList[MAX_OPTIONS][MAX_STRLEN] = {"exit", "adding an item"};
+	char shoppingList[MAX_OPTIONS][MAX_STRLEN] = {"exit", "search", "adding an item"};
 
 	int checkingNextChar;
 	//checking for amount of lines in file to make data array
-	int count = 2;
+	int count = 3;
 	do {
 		fscanf(filePtr, "%[^\n]", shoppingList[count]);
 		checkingNextChar = getc(filePtr);
@@ -92,7 +92,10 @@ void ListEditor() {
 		if(result == 1) {
 			fclose(filePtr);
 			break;
-		} else if(result == 2) {
+		} else if(result == 2){
+            ListSearch();
+            break;
+        } else if(result == 3) {
 			printf("Enter product name\n");
 			scanf("%s", shoppingList[count]);
 			fprintf(filePtr, "%s\n", shoppingList[count]);
