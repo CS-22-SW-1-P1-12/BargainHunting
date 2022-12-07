@@ -1,9 +1,4 @@
-//
-// Created by sinag on 17.11.2022.
-//
-//
-// Created by Lennart Diego Kahn on 03/11/2022.
-//
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
