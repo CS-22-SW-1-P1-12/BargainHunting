@@ -32,7 +32,7 @@ int ScanInput(int items){
     char* ptr;
     while(1){
         printf("\n\nPlease input the number corresponding to your desired option: ");
-        scanf("%s", option); // replace with a better scanning method
+        scanf(" %[^\n]s", option); // replace with a better scanning method
         int result = strtol(option, &ptr, 10);
         if(result > 0 && result <= items){
             return result;

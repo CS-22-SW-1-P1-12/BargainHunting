@@ -10,18 +10,6 @@
 #include "database.h"
 #define MAX_STR_LEN 20
 
-int main(){
-    data_t* data = LoadDatabase();
-    int numberOfStores = 0;
-    char** stores = ListOfStores(data, &numberOfStores);
-
-    for (int i = 0; i < numberOfStores; ++i) {
-        printf("%s\n", stores[i]);
-    }
-
-}
-
-
 data_t* LoadDatabase(){
     FILE* filePtr;
     filePtr = fopen("data/data.txt","r");
