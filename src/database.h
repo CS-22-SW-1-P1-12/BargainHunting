@@ -37,4 +37,5 @@ typedef struct {
  */
 data_t*  LoadDatabase();
 int GetStrLength(const char* data);
+char** ListOfStores(data_t* data, int* numberOfStores);
 #endif //BARGAINHUNTING_DATABASE_H

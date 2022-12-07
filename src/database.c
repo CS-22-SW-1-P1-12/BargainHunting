@@ -10,6 +10,15 @@
 #include "database.h"
 
 
+/*int main(){
+    data_t* data = LoadDatabase();
+    int numberOfStores = 0;
+    char** stores = ListOfStores(data, &numberOfStores);
+    for (int i = 0; i < numberOfStores; ++i) {
+        printf("%s", stores[i]);
+    }
+}*/
+
 data_t* LoadDatabase(){
     FILE* filePtr;
     filePtr = fopen("data/data.txt","r");
@@ -169,4 +178,21 @@ int GetStrLength(const char* string)
         i++;
     }
     return i;
+}
+
+char** ListOfStores(data_t* data, int* numberOfStores){
+    char** stores = malloc(data->productSize * sizeof(char) * MAX_STR_LEN);
+    for (int i = 0; i < data->productSize; ++i) {
+        int found = 0;
+        for (int x = 0; x < *numberOfStores; ++x) {
+            if(!strcmp(data->products[i].store,stores[x])){
+                found = 1;
+            }
+        }
+        if(!found){
+            numberOfStores++;
+            strcpy(stores[*numberOfStores-1], data->products[i].store);
+        }
+    }
+    return stores;
 }
