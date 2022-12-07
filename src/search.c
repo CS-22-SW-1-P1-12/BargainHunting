@@ -37,7 +37,7 @@ int ProductSearch(data_t* data){
 
 int NumberInArray(int number, const int* array, int arraySize) {
     for (int i = 0; i < arraySize; ++i) {
-        if (array[i] == number) {
+            if (array[i] == number) {
             return 1;
         }
     }
