@@ -1,4 +1,4 @@
-add_executable(main main.c main.h database.c preferences.c grocery_list.c calculations.c sort_shopping_list.c CreateMenu.c CreateMenu.h ListEditor.c ListEditor.h LoadUserPreferences.c LoadUserPreferences.h search.c search.h ListSearch.c ListSearch.h)
+add_executable(main main.c main.h database.c preferences.c grocery_list.c calculations.c sort_shopping_list.c CreateMenu.c CreateMenu.h ListEditor.c ListEditor.h LoadUserPreferences.c LoadUserPreferences.h search.c search.h ListSearch.c ListSearch.h findCheapestProduct.c findCheapestProduct.h merchSort.c merchSort.h)
 add_executable(database database.c database.h)
 add_executable(search search.c search.h database.c CreateMenu.c)
 file(COPY data DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
