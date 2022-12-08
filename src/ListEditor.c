@@ -1,5 +1,6 @@
 #include "ListEditor.h"
 #include "CreateMenu.h"
+#include "ListSearch.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -93,7 +94,9 @@ void ListEditor() {
 			fclose(filePtr);
 			break;
 		} else if(result == 2){
-            ListSearch();
+            data_t* data = LoadDatabase();
+            rewind(filePtr);
+            InitListSearch(data, filePtr);
             break;
         } else if(result == 3) {
 			printf("Enter product name\n");

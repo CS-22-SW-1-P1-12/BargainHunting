@@ -6,20 +6,15 @@
 #define MAX_BUFFER 100
 //
 
-char **LoadFile(char *fileName);
-void PrintList(char** lines);
-
-void * shoppingListLoad()
+/*void * shoppingListLoad()
 {
-    char* fileName = "listFile.txt";
     char** lines = LoadFile(fileName);
     PrintList(lines);
     return 0;
-}
+}*/
 
 //This function opens a text file and returns the contents in a string array called lines
-char **LoadFile(char *fileName){
-    FILE *file = fopen(fileName, "r");
+char **LoadFile(FILE* file){
 
     //If the file is not found, print an error and return nothing
     if(!file)
@@ -64,13 +59,17 @@ char **LoadFile(char *fileName){
 
     printf("done\n");
 
+    for (int j = 0; lines[j] != NULL ; ++j) {
+        printf("%s", lines[j]);
+    }
+
     return lines;
 }
 
 //This function prints every string in a string array as a new line.
-void PrintList(char** lines) {
+/*void PrintList(char** lines) {
     for (int j = 0; lines[j] != NULL; j++) {
         printf("%s", lines[j]);
     }
     printf("\n");
-}
+}*/
