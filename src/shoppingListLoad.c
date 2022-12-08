@@ -4,7 +4,7 @@
 
 #define SIZE_JUMPS 1
 #define MAX_BUFFER 100
-
+//
 
 char **LoadFile(char *fileName);
 void PrintList(char** lines);
