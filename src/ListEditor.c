@@ -73,7 +73,7 @@ void ListEditor() {
 	if(filePtr == NULL) {
 		exit(EXIT_FAILURE);
 	}
-	char shoppingList[MAX_OPTIONS][MAX_STRLEN] = {"exit", "search", "adding an item"};
+	char shoppingList[MAX_OPTIONS][MAX_STRLEN] = {"exit", "search", "add an item"};
 
 	int checkingNextChar;
 	//checking for amount of lines in file to make data array
