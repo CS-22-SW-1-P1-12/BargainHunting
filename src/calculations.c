@@ -45,9 +45,20 @@ void Calculations (product_t **storeProducts){
 
         if(results[x][1] > results[x+1][1]){
 
-            temp[0] = results[x];
-            results[x] = results[x+1];
-            results[x+1] = temp[0];
+            //swap index x,0
+            temp[0][0] = results[x][0];
+            results[x][0] = results[x+1][0];
+            results[x+1][0] = temp[0][0];
+
+            //swap index x,1
+            temp[0][0] = results[x][1];
+            results[x][1] = results[x+1][1];
+            results[x+1][1] = temp[0][0];
+
+            //swap index x,2
+            temp[0][0] = results[x][2];
+            results[x][2] = results[x+1][2];
+            results[x+1][2] = temp[0][0];
         }
 
         ++x;
