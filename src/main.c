@@ -50,7 +50,6 @@ void MainMenuScreen(){
 }
 
 int main(){
-
     MainMenuScreen();
 
 }

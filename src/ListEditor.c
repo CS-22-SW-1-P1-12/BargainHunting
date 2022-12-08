@@ -6,11 +6,6 @@
 #include <string.h>
 #include <dirent.h>
 
-/*
- * todo:
- *  shoppingList[MAX_OPTIONS][MAX_STRLEN] is shitty
- */
-
 void GetExistingLists(char *test) {
 	char arr[MAX_OPTIONS][MAX_STRLEN] = {"Create New List", "Go Back"};
 
@@ -48,7 +43,9 @@ void GetExistingLists(char *test) {
 		strcpy(test, newlist);
 	} else if(result == 2) {
 		//letting function end
-	} else if(count2 >= result) {
+        strcpy(test, "quit");
+
+    } else if(count2 >= result) {
 		strcpy(test, arr[result - 1]);
 	}
 }
@@ -60,11 +57,14 @@ void GetExistingLists(char *test) {
  * todo: then printing out everything inside of the list
  */
 void ListEditor() {
-	char listName[MAX_STRLEN];
-	GetExistingLists(listName);
-	//printf("%s", listName);
-	char path[MAX_STRLEN] = "./data/shopping_list/";
-	strcat(path, listName);
+    char listName[MAX_STRLEN];
+    GetExistingLists(listName);
+    //printf("%s", listName);
+    if (strcmp(listName, "quit") == 0) {
+        return;
+    } else {
+        char path[MAX_STRLEN] = "./data/shopping_list/";
+        strcat(path, listName);
 
 	/*
 	 * printing out the contents of the selected list
@@ -86,42 +86,72 @@ void ListEditor() {
 		count ++;
 	} while(checkingNextChar != EOF);
 
-	while(1) {
-		printf("\n\n you may now remove or add items to your list \n");
-		int result = CreateMenu(shoppingList);
-		printf("result is %d\n", result);
-		if(result == 1) {
-			fclose(filePtr);
-			break;
-		} else if(result == 2){
-            data_t* data = LoadDatabase();
-            rewind(filePtr);
-            InitListSearch(data, filePtr);
-            break;
-        } else if(result == 3) {
-			printf("Enter product name\n");
-			scanf("%s", shoppingList[count]);
-			fprintf(filePtr, "%s\n", shoppingList[count]);
-			count ++;
-		} else {
-			if(result <= count) {
-				//char tempShoppingList[MAX_OPTIONS][MAX_STRLEN] = {};
-				for(int x = result - 1; x <= count - 1; x ++) {
-					strcpy(shoppingList[x], shoppingList[x + 1]); // assign arr[i+1] to arr[i]
-				}
-				strcpy(shoppingList[count - 1], "\0");
-				count --;
-				fclose(filePtr);
-				fclose(fopen(path, "w"));
-				filePtr = fopen(path, "a+");
-				for(int i = 2; i < count; ++ i) {
+        while (1) {
+            printf("\n\n you may now remove or add items to your list \n");
+            int result = CreateMenu(shoppingList);
+            printf("result is %d\n", result);
+            if (result == 1) {
+                fclose(filePtr);
+                break;
+            } else if (result == 2) {
+                data_t *data = LoadDatabase();
+                rewind(filePtr);
+                InitListSearch(data, filePtr);
+                break;
+            } else if (result == 3) {
+                printf("Enter product name\n");
+                scanf("%s", shoppingList[count]);
+                fprintf(filePtr, "%s\n", shoppingList[count]);
+                count++;
+            } else {
+                if (result <= count) {
+                    //char tempShoppingList[MAX_OPTIONS][MAX_STRLEN] = {};
+                    for (int x = result - 1; x <= count - 1; x++) {
+                        strcpy(shoppingList[x], shoppingList[x + 1]); // assign arr[i+1] to arr[i]
+                    }
+                    strcpy(shoppingList[count - 1], "\0");
+                    count--;
+                    fclose(filePtr);
+                    fclose(fopen(path, "w"));
+                    filePtr = fopen(path, "a+");
+                    for (int i = 2; i < count; ++i) {
+                        while (1) {
+                            printf("\n\n you may now remove or add items to your list \n");
+                            int result = CreateMenu(shoppingList);
+                            printf("result is %d\n", result);
+                            if (result == 1) {
+                                fclose(filePtr);
+                                break;
+                            } else if (result == 2) {
+                                data_t *data = LoadDatabase();
+                                rewind(filePtr);
+                                InitListSearch(data, filePtr);
+                                break;
+                            } else if (result == 3) {
+                                printf("Enter product name\n");
+                                scanf("%s", shoppingList[count]);
+                                fprintf(filePtr, "%s\n", shoppingList[count]);
+                                count++;
+                            } else {
+                                if (result <= count) {
+                                    //char tempShoppingList[MAX_OPTIONS][MAX_STRLEN] = {};
+                                    for (int x = result - 1; x <= count - 1; x++) {
+                                        strcpy(shoppingList[x], shoppingList[x + 1]); // assign arr[i+1] to arr[i]
+                                    }
+                                    strcpy(shoppingList[count - 1], "\0");
+                                    count--;
+                                    fclose(filePtr);
+                                    fclose(fopen(path, "w"));
+                                    filePtr = fopen(path, "a+");
+                                    for (int i = 2; i < count; ++i) {
 
-					fprintf(filePtr, "%s", shoppingList[i]);
-					if(i < count - 1) {
-						fprintf(filePtr, "\n");
-					}
-				}
-			}
-		}
-	}
-}
+                                        fprintf(filePtr, "%s", shoppingList[i]);
+                                        if (i < count - 1) {
+                                            fprintf(filePtr, "\n");
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
