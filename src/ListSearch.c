@@ -55,7 +55,3 @@ void ListSearch(data_t* data, char **shoppingList, char** stores, product_t** st
         }
     }
 }
-
-void FindCheapestProduct(){
-
-}
