@@ -9,12 +9,21 @@
 #include <string.h>
 #include <stdio.h>
 
-void InitListSearch(data_t* data, FILE* filePtr){
+void InitListSearch(FILE* filePtr){
+    rewind(filePtr);
+    data_t* data = LoadDatabase();
     char** shoppingList = LoadFile(filePtr);
+    for (int i = 0; shoppingList[i] != NULL; ++i) {
+        if(shoppingList[i+1] != NULL){
+            shoppingList[i][GetStrLength(shoppingList[i])-1] = ' ';
+        }
+    }
+    for (int i = 0; shoppingList[i] != NULL; ++i) {
+        printf("%s\n", shoppingList[i]);
+    }
     int numberOfStores = 0;
     char **stores = ListOfStores(data, &numberOfStores);
     int* numberOfProducts = malloc(sizeof(int) * numberOfStores);
-
     product_t **storeProducts = malloc(sizeof(product_t*) * numberOfStores);
     for(int i = 0; numberOfStores > i; i++){
         storeProducts[i] = malloc(sizeof(product_t) * data->productSize);
