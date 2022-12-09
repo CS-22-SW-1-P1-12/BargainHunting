@@ -64,7 +64,7 @@ void Calculations (product_t **storeProducts){
         ++x;
     }
 
-
+    //print the sorted results 
 
 
 }
