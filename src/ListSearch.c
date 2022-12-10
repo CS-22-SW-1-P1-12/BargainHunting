@@ -47,13 +47,18 @@ void ListSearch(data_t* data, char **shoppingList, char** stores, product_t** st
         int numberOfFoundProducts = SearchData(shoppingList[i], data, indexOfFoundProducts);
         for(int x = 0; x < numberOfStores; x++){
             product_t* storeProductsTemp = malloc(sizeof(product_t) * numberOfFoundProducts);
+            int numberOfTempProducts = 0;
             for(int y = 0; y < numberOfFoundProducts; y++) {
                 if (strcmp(data->products[indexOfFoundProducts[y]].store, stores[x]) == 0){
 
-                    storeProducts[x][numberOfProducts[x]] = data->products[indexOfFoundProducts[y]];
-                    numberOfProducts[x]++;
+                    storeProductsTemp[numberOfTempProducts] = data->products[indexOfFoundProducts[y]];
+                    numberOfTempProducts++;
                 }
+                product_t cheapestProduct =
+                storeProducts[x][numberOfProducts[x]] = data->products[indexOfFoundProducts[y]];
+                numberOfProducts[x]++;
             }
+            free(storeProductsTemp);
 
         }
     }
