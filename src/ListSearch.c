@@ -15,7 +15,7 @@ void InitListSearch(FILE* filePtr){
     char** shoppingList = LoadFile(filePtr);
     for (int i = 0; shoppingList[i] != NULL; ++i) {
         if(shoppingList[i+1] != NULL){
-            shoppingList[i][GetStrLength(shoppingList[i])-1] = ' ';
+            shoppingList[i][GetStrLength(shoppingList[i])-1] = '\0';
         }
     }
     for (int i = 0; shoppingList[i] != NULL; ++i) {
@@ -25,9 +25,8 @@ void InitListSearch(FILE* filePtr){
     char **stores = ListOfStores(data, &numberOfStores);
     int* numberOfProducts = malloc(sizeof(int) * numberOfStores);
     product_t **storeProducts = malloc(sizeof(product_t*) * numberOfStores);
-    for(int i = 0; numberOfStores > i; i++){
+    for(int i = 0; i < numberOfStores; i++){
         storeProducts[i] = malloc(sizeof(product_t) * data->productSize);
-
     }
     ListSearch(data, shoppingList, stores, storeProducts, numberOfStores, numberOfProducts);
     for (int i = 0; i < numberOfStores; i++) {
@@ -42,22 +41,17 @@ void ListSearch(data_t* data, char **shoppingList, char** stores, product_t** st
     for (int i = 0; i < numberOfStores; i++) {
         numberOfProducts[i] = 0;
     }
-
     int indexOfFoundProducts[MAX_FOUND_PRODUCTS];
     for (int i = 0; shoppingList[i] != NULL; i++){
+        printf("searching for %s.", shoppingList[i]);
         int numberOfFoundProducts = SearchData(shoppingList[i], data, indexOfFoundProducts);
+        for(int x = 0; x < numberOfStores; x++){
+            product_t* storeProductsTemp = malloc(sizeof(product_t) * numberOfFoundProducts);
+            for(int y = 0; y < numberOfFoundProducts; y++) {
+                if (strcmp(data->products[indexOfFoundProducts[y]].store, stores[x]) == 0){
 
-        printf("Found products:\n");
-        for (int x = 0; x < numberOfFoundProducts; x++) {
-            printf("%d ", indexOfFoundProducts[x]);
-        }
-        printf("\n");
-
-        for(int x = 0; numberOfFoundProducts > x; x++){
-            for(int q = 0; numberOfStores > q; q++) {
-                if (strcmp(data->products[x].store, stores[q]) == 0){
-                    storeProducts[q][numberOfProducts[q]] = data->products[x];
-                    numberOfProducts[q]++;
+                    storeProducts[x][numberOfProducts[x]] = data->products[indexOfFoundProducts[y]];
+                    numberOfProducts[x]++;
                 }
             }
 
