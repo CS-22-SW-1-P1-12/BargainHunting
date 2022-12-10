@@ -124,3 +124,21 @@ int SearchMenu(data_t* data, const int indexOfFoundProducts[MAX_FOUND_PRODUCTS],
     int option = CreateMenu(options) - 1;
     return indexOfFoundProducts[option];
 }
+
+
+int FindCheapestProduct(data_t* data, const int indexOfProducts[MAX_FOUND_PRODUCTS], int numberOfProducts){
+    int cheapProduct = 1;
+    int cheapestProduct;
+    for (int i = 0; i < numberOfProducts; ++i) {
+        for (int x = 0; x < i; ++x) {
+            if(data -> products[indexOfProducts[i]].pricePerKilo >= data -> products[indexOfProducts[x]].pricePerKilo){
+                cheapProduct = 0;
+            }
+        }
+        if(cheapProduct){
+            cheapestProduct = indexOfProducts[i];
+        }
+    }
+
+    return cheapestProduct;
+}

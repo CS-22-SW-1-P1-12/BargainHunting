@@ -14,5 +14,6 @@ int SearchData(const char* searchTerm, data_t* database, int indexOfFoundProduct
 void GetSearchedProduct(char SearchTerm[MAX_SEARCH_LEN]);
 int SearchMenu(data_t* data, const int indexOfFoundProducts[MAX_FOUND_PRODUCTS], int numberOfFoundProducts);
 int ProductSearch(data_t* data);
+int FindCheapestProduct(data_t* data, const int indexOfProducts[MAX_FOUND_PRODUCTS], int numberOfProducts);
 
 #endif //BARGAINHUNTING_SEARCH_H
