@@ -43,20 +43,28 @@ void ListSearch(data_t* data, char **shoppingList, char** stores, product_t** st
     }
     int indexOfFoundProducts[MAX_FOUND_PRODUCTS];
     for (int i = 0; shoppingList[i] != NULL; i++){
-        printf("searching for %s.", shoppingList[i]);
+        printf("searching for %s.\n", shoppingList[i]);
         int numberOfFoundProducts = SearchData(shoppingList[i], data, indexOfFoundProducts);
+        printf("cry\n");
         for(int x = 0; x < numberOfStores; x++){
-            product_t* storeProductsTemp = malloc(sizeof(product_t) * numberOfFoundProducts);
+            int* storeProductsTemp = malloc(sizeof(int) * numberOfFoundProducts);
             int numberOfTempProducts = 0;
+            printf("cry\n");
             for(int y = 0; y < numberOfFoundProducts; y++) {
+                printf("cry\n");
                 if (strcmp(data->products[indexOfFoundProducts[y]].store, stores[x]) == 0){
-
-                    storeProductsTemp[numberOfTempProducts] = data->products[indexOfFoundProducts[y]];
+                    printf("cry\n");
+                    storeProductsTemp[numberOfTempProducts] = indexOfFoundProducts[y];
                     numberOfTempProducts++;
                 }
-                product_t cheapestProduct =
-                storeProducts[x][numberOfProducts[x]] = data->products[indexOfFoundProducts[y]];
+                printf("cry\n");
+            }
+            if(numberOfTempProducts > 0)
+            {
+                int cheapestProduct = FindCheapestProduct(data, storeProductsTemp, numberOfTempProducts);
+                storeProducts[x][numberOfProducts[x]] = data->products[cheapestProduct];
                 numberOfProducts[x]++;
+                printf("cry\n");
             }
             free(storeProductsTemp);
 
