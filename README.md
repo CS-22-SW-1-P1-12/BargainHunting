@@ -72,9 +72,9 @@ This code defines a function CreateMenu() that takes in a 2D array of strings as
 For example, if the options array contains the following strings:
 ```c
 {
-"Option 1",
-"Option 2",
-"Option 3"
+{"Option 1"},
+{"Option 2"},
+{"Option 3"}
 }
 ```
 then calling CreateMenu(options) would generate the following menu:
