@@ -7,7 +7,7 @@
 int Counter(char options[MAX_OPTIONS][MAX_STRLEN]){
     int count;
     for (count = 0; count < MAX_OPTIONS; ++count) {
-        if(options[count][0] == NULL){
+        if(options[count][0] == '\0'){
             break;
         }
 
