@@ -9,7 +9,7 @@
 #include <string.h>
 #include <stdio.h>
 
-void InitListSearch(FILE* filePtr){
+product_t** InitListSearch(FILE* filePtr){
     rewind(filePtr);
     data_t* data = LoadDatabase();
     char** shoppingList = LoadFile(filePtr);
@@ -35,6 +35,7 @@ void InitListSearch(FILE* filePtr){
             printf("%s \n", storeProducts[i][x].name);
         }
     }
+    return storeProducts;
 }
 
 void ListSearch(data_t* data, char **shoppingList, char** stores, product_t** storeProducts, int numberOfStores, int* numberOfProducts) {
@@ -53,18 +54,15 @@ void ListSearch(data_t* data, char **shoppingList, char** stores, product_t** st
             for(int y = 0; y < numberOfFoundProducts; y++) {
                 printf("cry\n");
                 if (strcmp(data->products[indexOfFoundProducts[y]].store, stores[x]) == 0){
-                    printf("cry\n");
                     storeProductsTemp[numberOfTempProducts] = indexOfFoundProducts[y];
                     numberOfTempProducts++;
                 }
-                printf("cry\n");
             }
             if(numberOfTempProducts > 0)
             {
                 int cheapestProduct = FindCheapestProduct(data, storeProductsTemp, numberOfTempProducts);
                 storeProducts[x][numberOfProducts[x]] = data->products[cheapestProduct];
                 numberOfProducts[x]++;
-                printf("cry\n");
             }
             free(storeProductsTemp);
 
