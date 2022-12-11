@@ -7,6 +7,7 @@
 #include "CreateMenu.h"
 #include "string.h"
 #include "ListSearch.h"
+#define MAX_STR_LEN 20
 
 void Calculations (product_t **storeProducts){
 
@@ -41,30 +42,58 @@ void Calculations (product_t **storeProducts){
     char temp[1][1];
 
 
-    while(x < 10){ //fix the length skal være nr of stores og ikke 10
 
-        if(results[x][1] > results[x+1][1]){
+    while(counter < 10) { //fix 10
+
+        while (x < 10) { //fix the length skal være nr of stores og ikke 10
+
+            if (results[x][1] > results[x + 1][1]) {
 
             //swap index x,0
             temp[0][0] = results[x][0];
-            results[x][0] = results[x+1][0];
-            results[x+1][0] = temp[0][0];
+            results[x][0] = results[x + 1][0];
+            results[x + 1][0] = temp[0][0];
 
             //swap index x,1
             temp[0][0] = results[x][1];
-            results[x][1] = results[x+1][1];
-            results[x+1][1] = temp[0][0];
+            results[x][1] = results[x + 1][1];
+            results[x + 1][1] = temp[0][0];
 
             //swap index x,2
             temp[0][0] = results[x][2];
-            results[x][2] = results[x+1][2];
-            results[x+1][2] = temp[0][0];
-        }
+            results[x][2] = results[x + 1][2];
+            results[x + 1][2] = temp[0][0];
+            } else {
+             ++counter;
+            }
 
         ++x;
+
+        }
+        x = 0;          //resets x to loop through array again
+        if(counter == 10){ //checks if array is sorted and starts over if not
+            break;
+        }else {
+            counter = 0;
+        }
+
     }
 
-    //print the sorted results 
+
+
+    printf("-------------------------------------------------");
+
+    for (int i = 0; i < 10; ++i) { //fix the thing 10
+        printf("-------------------------------------------------");
+        for (int j = 0; j < MAX_STR_LEN; ++j) {
+
+            printf("%c", results[i][j]);
+
+        }
+        printf("\n");
+
+
+    }
 
 
 }
