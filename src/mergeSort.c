@@ -15,10 +15,6 @@ void Merge(product_t** L, int start, int end, int mid, const int* numberOfProduc
     for (int i = 0; i < end - mid; ++i) {
         L2[i] = malloc (sizeof(product_t) * MAX_FOUND_PRODUCTS);
     }
-    for (int i = 0; i < end - mid; ++i) {
-        L2[i][0].name = "END";
-    }
-    printf("malloced\n");
 
     for (int i = start; i <= end; ++i) {
         if(i <= mid)
@@ -29,15 +25,10 @@ void Merge(product_t** L, int start, int end, int mid, const int* numberOfProduc
 
     int i = 0, j = 0;
     while(i < mid - start + 1 && j < end - mid) {
-        printf("going to compare\n");
-        printf("%lf", TotalPrice(L1[i]));
-        printf("%lf", TotalPrice(L2[j]));
         if (TotalPrice(L1[i]) <= TotalPrice(L2[j])) {
-            printf("Left is not bigger");
             L[start + i + j] = L1[i];
             i++;
         } else {
-            printf("Left is bigger");
             L[start + i + j] = L2[j];
             j++;
         }
@@ -51,12 +42,10 @@ void Merge(product_t** L, int start, int end, int mid, const int* numberOfProduc
             L[start + j + k] = L1[k];
         }
     }
-    printf("trying to free\n");
     for (int x = 0; x < mid - start + 1; ++x) {
         L1[x] = NULL;
         free(L1[x]);
     }
-    printf("freed1\n");
     L1 = NULL;
     free(L1);
     for (int x = 0; x < end - mid; ++x) {
@@ -65,7 +54,6 @@ void Merge(product_t** L, int start, int end, int mid, const int* numberOfProduc
     }
     L2 = NULL;
     free(L2);
-    printf("freed\n");
 }
 
 void MergeSort(product_t** L, int start, int end, const int* numberOfProducts){

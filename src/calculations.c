@@ -51,53 +51,20 @@ void Calculations (product_t **storeProducts, int numberOfStores, char** stores,
 
     }
 
-    /*while(counter < numberOfStores) { //fix 10
-
-        while (x < numberOfStores) { //fix the length skal være nr of stores og ikke 10
-
-            if (results[x][0] > results[x + 1][0]) {
-
-            //swap index x,0
-            temp[0][0] = results[x][0];
-            results[x][0] = results[x + 1][0];
-            results[x + 1][0] = temp[0][0];
-
-            //swap index x,1
-            temp[0][0] = results[x][1];
-            results[x][1] = results[x + 1][1];
-            results[x + 1][1] = temp[0][0];
-
-            } else {
-             ++counter;
-            }
-
-        ++x;
-
-        }
-        x = 0;          //resets x to loop through array again
-        if(counter == numberOfStores){ //checks if array is sorted and starts over if not
-            break;
-        }else {
-            counter = numberOfStores;
-        }
-
-    }*/
-
     MergeSort(storeProducts, 0, numberOfStores - 1, numberOfProducts);
 
     printf("-------------------------------------------------\n");
-    printf("%s: %lf", storeProducts[8][0].store, storeProducts[8][0].price);
 
     for (int i = 0; i < numberOfStores; ++i) { //fix the thing 10
-        printf("-------------------------------------------------");
-        printf("%s: ", storeProducts[i][0].store);
-        printf("price (total): ");
-        printf("%lf ", TotalPrice(storeProducts[i]));
-        printf("price per kg: ");
-        printf("%lf ", TotalPricePerKilo(storeProducts[i]));
-        printf("\n");
-
-
+        if(TotalPrice(storeProducts[i]) > 0){
+            printf("-------------------------------------------------");
+            printf("%s: ", storeProducts[i][0].store);
+            printf("price (total): ");
+            printf("%lf ", TotalPrice(storeProducts[i]));
+            printf("price per kg: ");
+            printf("%lf ", TotalPricePerKilo(storeProducts[i]));
+            printf("\n");
+        }
     }
 
 
