@@ -38,7 +38,7 @@ void InitListSearch(FILE* filePtr){
     for (int i = 0; i < numberOfStores; ++i) {
         printf("%d\n", numberOfProducts[i]);
     }
-    Calculations(storeProducts, numberOfStores, numberOfProducts);
+    Calculations(storeProducts, numberOfStores, stores, numberOfProducts);
     /*for (int i = 0; i < data->productSize; ++i) {
         free(stores[i]);
     }

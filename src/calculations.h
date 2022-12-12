@@ -7,6 +7,6 @@
 
 #include "database.h"
 
-void Calculations (product_t **storeProducts, int numberOfStores, int* numberOfProducts);
+void Calculations (product_t **storeProducts, int numberOfStores, char** stores, int* numberOfProducts);
 
 #endif //BARGAINHUNTING_CALCULATIONS_H

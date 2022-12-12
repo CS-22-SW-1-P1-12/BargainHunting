@@ -9,11 +9,11 @@
 #include "ListSearch.h"
 #define MAX_STR_LEN 20
 
-void Calculations (product_t **storeProducts, int numberOfStores, const int* numberOfProducts){
+void Calculations (product_t **storeProducts, int numberOfStores, char** stores, const int* numberOfProducts){
 
 
     //use Sinas functions to get lengths
-    char results[numberOfStores][3]; //10 skal ændres
+    double results[numberOfStores][2]; //10 skal ændres
 
     printf("cry\n");
 
@@ -34,15 +34,14 @@ void Calculations (product_t **storeProducts, int numberOfStores, const int* num
 
         printf("cry\n");
 
-        results[i][0] = *storeName;
-        results[i][1] = (char)totalPrice;    //casting to char in order for the price values to be stored in the char array with results
-        results[i][2] = (char)totalPricePerKilo;
+        results[i][0] = totalPrice;    //casting to char in order for the price values to be stored in the char array with results
+        results[i][1] = totalPricePerKilo;
         printf("results obtained\n");
 
     }
 
     int x = 0, counter = 0;
-    char temp[1][1];
+    double temp[1][1];
 
     while(counter < numberOfStores) { //fix 10
 
@@ -60,10 +59,6 @@ void Calculations (product_t **storeProducts, int numberOfStores, const int* num
             results[x][1] = results[x + 1][1];
             results[x + 1][1] = temp[0][0];
 
-            //swap index x,2
-            temp[0][0] = results[x][2];
-            results[x][2] = results[x + 1][2];
-            results[x + 1][2] = temp[0][0];
             } else {
              ++counter;
             }
@@ -86,9 +81,9 @@ void Calculations (product_t **storeProducts, int numberOfStores, const int* num
 
     for (int i = 0; i < numberOfStores; ++i) { //fix the thing 10
         printf("-------------------------------------------------");
-        for (int j = 0; j < 3; ++j) {
-
-            printf("%c", results[i][j]);
+        printf("%s: ", stores[i]);
+        for (int j = 0; j < 2; ++j) {
+            printf("%lf", results[i][j]);
 
         }
         printf("\n");
