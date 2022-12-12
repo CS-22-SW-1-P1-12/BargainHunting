@@ -8,5 +8,7 @@
 #include "database.h"
 
 void Calculations (product_t **storeProducts, int numberOfStores, char** stores, int* numberOfProducts);
+double TotalPrice(product_t* products);
+double TotalPricePerKilo(product_t* products);
 
 #endif //BARGAINHUNTING_CALCULATIONS_H

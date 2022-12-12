@@ -73,6 +73,7 @@ void ListSearch(data_t* data, char **shoppingList, char** stores, product_t** st
                 storeProducts[x][numberOfProducts[x]] = data->products[cheapestProduct];
                 numberOfProducts[x] += 1;
             }
+            storeProducts[x][numberOfProducts[x]].name = "END";
             free(storeProductsTemp);
         }
         printf("a\n");

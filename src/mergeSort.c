@@ -1,13 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "database.h"
+#include "calculations.h"
 
-void Merge(product_t*** L, int start, int end, int mid);
-void MergeSort(product_t*** L, int start, int end);
 
-void Merge(product_t*** L, int start, int end, int mid){
-    product_t** L1[mid - start + 1];
-    product_t** L2[end - mid];
+void Merge(product_t** L, int start, int end, int mid, const int* numberOfProducts){
+    product_t** L1 = malloc((mid - start + 1) * sizeof(product_t*));
+    for (int i = 0; i < mid - start + 1; ++i) {
+        L1[i] = malloc (sizeof(product_t) * numberOfProducts[i]);
+    }
+    product_t** L2 = malloc((end - mid) * sizeof(product_t*));
+    for (int i = 0; i < end - mid; ++i) {
+        L2[i] = malloc (sizeof(product_t) * numberOfProducts[i]);
+    }
+    printf("malloced\n");
 
     for (int i = start; i <= end; ++i) {
         if(i <= mid)
@@ -18,7 +24,7 @@ void Merge(product_t*** L, int start, int end, int mid){
 
     int i = 0, j = 0;
     while(i < mid - start + 1 && j < end - mid) {
-        if (L1[i] <= L2[j]) {
+        if (TotalPrice(L1[i]) <= TotalPrice(L2[j])) {
             L[start + i + j] = L1[i];
             i++;
         } else {
@@ -35,15 +41,30 @@ void Merge(product_t*** L, int start, int end, int mid){
             L[start + j + k] = L1[k];
         }
     }
+    printf("trying to free\n");
+    for (int x = 0; x < mid - start + 1; ++x) {
+        L1[x] = NULL;
+        free(L1[x]);
+    }
+    printf("freed1\n");
+    L1 = NULL;
+    free(L1);
+    for (int x = 0; x < end - mid; ++x) {
+        L2[x] = NULL;
+        free(L2[x]);
+    }
+    L2 = NULL;
+    free(L2);
+    printf("freed\n");
 }
 
-void MergeSort(product_t*** L, int start, int end){
+void MergeSort(product_t** L, int start, int end, const int* numberOfProducts){
     if(start < end)
     {
         int mid = (start + end)/2;
-        MergeSort(L, start, mid);
-        MergeSort(L, mid + 1, end);
-        Merge(L, start, end, mid);
+        MergeSort(L, start, mid, numberOfProducts);
+        MergeSort(L, mid + 1, end, numberOfProducts);
+        Merge(L, start, end, mid, numberOfProducts);
     }
 }
 
