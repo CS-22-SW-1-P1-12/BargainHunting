@@ -166,6 +166,10 @@ int GetStrLength(const char* string)
     return i;
 }
 
+void FreeData(data_t* data){
+
+}
+
 char** ListOfStores(data_t* data, int* numberOfStores){
 
     char** stores = malloc(data->productSize * sizeof(char*));
