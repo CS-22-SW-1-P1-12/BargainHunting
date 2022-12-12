@@ -83,7 +83,7 @@ void Calculations (product_t **storeProducts, int numberOfStores, char** stores,
 
     }*/
 
-    MergeSort(storeProducts, 0, numberOfStores, numberOfProducts);
+    MergeSort(storeProducts, 0, numberOfStores - 1, numberOfProducts);
 
     printf("-------------------------------------------------\n");
     printf("%s: %lf", storeProducts[8][0].store, storeProducts[8][0].price);

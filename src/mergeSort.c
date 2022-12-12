@@ -1,17 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "database.h"
+#include "search.h"
 #include "calculations.h"
 
 
 void Merge(product_t** L, int start, int end, int mid, const int* numberOfProducts){
     product_t** L1 = malloc((mid - start + 1) * sizeof(product_t*));
     for (int i = 0; i < mid - start + 1; ++i) {
-        L1[i] = malloc (sizeof(product_t) * numberOfProducts[i]);
+        L1[i] = malloc (sizeof(product_t) * MAX_FOUND_PRODUCTS);
     }
     product_t** L2 = malloc((end - mid) * sizeof(product_t*));
     for (int i = 0; i < end - mid; ++i) {
-        L2[i] = malloc (sizeof(product_t) * numberOfProducts[i]);
+        L2[i] = malloc (sizeof(product_t) * MAX_FOUND_PRODUCTS);
+    }
+    for (int i = 0; i < end - mid; ++i) {
+        L2[i][0].name = "END";
     }
     printf("malloced\n");
 
@@ -24,10 +29,15 @@ void Merge(product_t** L, int start, int end, int mid, const int* numberOfProduc
 
     int i = 0, j = 0;
     while(i < mid - start + 1 && j < end - mid) {
+        printf("going to compare\n");
+        printf("%lf", TotalPrice(L1[i]));
+        printf("%lf", TotalPrice(L2[j]));
         if (TotalPrice(L1[i]) <= TotalPrice(L2[j])) {
+            printf("Left is not bigger");
             L[start + i + j] = L1[i];
             i++;
         } else {
+            printf("Left is bigger");
             L[start + i + j] = L2[j];
             j++;
         }
