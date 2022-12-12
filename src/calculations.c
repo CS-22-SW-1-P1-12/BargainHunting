@@ -12,22 +12,17 @@
 
 double TotalPrice(product_t* products){
     double totalPrice = 0;
-    int i = 0;
-    do{
+    for (int i = 0; (strcmp(products[i].name, "END") != 0); ++i) {
         totalPrice += products[i].price;
-        i++;
-    } while(strcmp(products[i].name, "END") != 0);
+    }
     return totalPrice;
 }
 
 double TotalPricePerKilo(product_t* products){
     double totalPrice = 0;
-    int i = 0;
-    do{
-        totalPrice += products[i].pricePerKilo;
-        i++;
+    for (int i = 0; (strcmp(products[i].name, "END") != 0); ++i) {
+        totalPrice += products[i].price;
     }
-    while(strcmp(products[i].name, "END") != 0);;
     return totalPrice;
 }
 
