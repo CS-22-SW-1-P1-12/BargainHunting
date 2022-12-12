@@ -31,8 +31,8 @@ void Calculations (product_t **storeProducts){
         }
 
         results[i][0] = *storeName;
-        results[i][1] = totalPrice;
-        results[i][2] = totalPricePerKilo;
+        results[i][1] = (char)totalPrice;    //casting to char in order for the price values to be stored in the char array with results
+        results[i][2] = (char)totalPricePerKilo;
 
 
     }
