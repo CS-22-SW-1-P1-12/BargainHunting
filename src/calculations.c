@@ -13,7 +13,7 @@ void Calculations (product_t **storeProducts, int numberOfStores, const int* num
 
 
     //use Sinas functions to get lengths
-    char results[MAX_STR_LEN][numberOfStores]; //10 skal ændres
+    char results[numberOfStores][3]; //10 skal ændres
 
     printf("cry\n");
 
@@ -37,19 +37,16 @@ void Calculations (product_t **storeProducts, int numberOfStores, const int* num
         results[i][0] = *storeName;
         results[i][1] = (char)totalPrice;    //casting to char in order for the price values to be stored in the char array with results
         results[i][2] = (char)totalPricePerKilo;
-        printf("results obtained");
+        printf("results obtained\n");
 
     }
-
 
     int x = 0, counter = 0;
     char temp[1][1];
 
+    while(counter < numberOfStores) { //fix 10
 
-
-    while(counter < 10) { //fix 10
-
-        while (x < 10) { //fix the length skal være nr of stores og ikke 10
+        while (x < numberOfStores) { //fix the length skal være nr of stores og ikke 10
 
             if (results[x][1] > results[x + 1][1]) {
 
@@ -75,21 +72,21 @@ void Calculations (product_t **storeProducts, int numberOfStores, const int* num
 
         }
         x = 0;          //resets x to loop through array again
-        if(counter == 10){ //checks if array is sorted and starts over if not
+        if(counter == numberOfStores){ //checks if array is sorted and starts over if not
             break;
         }else {
-            counter = 0;
+            counter = numberOfStores;
         }
 
     }
 
 
 
-    printf("-------------------------------------------------");
+    printf("-------------------------------------------------\n");
 
-    for (int i = 0; i < 10; ++i) { //fix the thing 10
+    for (int i = 0; i < numberOfStores; ++i) { //fix the thing 10
         printf("-------------------------------------------------");
-        for (int j = 0; j < MAX_STR_LEN; ++j) {
+        for (int j = 0; j < 3; ++j) {
 
             printf("%c", results[i][j]);
 

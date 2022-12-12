@@ -18,8 +18,8 @@ void InitListSearch(FILE* filePtr){
     for (int i = 0; shoppingList[i] != NULL; ++i) {
             shoppingList[i][GetStrLength(shoppingList[i])-1] = '\0';
             printf("%s\n", shoppingList[i]);
+            shoppingListLines++;
     }
-    printf("There are %d lines\n", shoppingListLines);
     int numberOfStores = 0;
     char **stores = ListOfStores(data, &numberOfStores);
     int* numberOfProducts = malloc(sizeof(int) * numberOfStores);
@@ -35,18 +35,19 @@ void InitListSearch(FILE* filePtr){
             printf("%s \n", storeProducts[i][x].name);
         }
     }
-    //Calculations(storeProducts, numberOfStores, numberOfProducts);
-
-    for (int i = 0; i < data->productSize; ++i) {
+    for (int i = 0; i < numberOfStores; ++i) {
+        printf("%d\n", numberOfProducts[i]);
+    }
+    Calculations(storeProducts, numberOfStores, numberOfProducts);
+    /*for (int i = 0; i < data->productSize; ++i) {
         free(stores[i]);
     }
     free(stores);
-
-    /*for(int i = 0; i < numberOfStores; i++){
+    for(int i = 0; i < numberOfStores; i++){
         free(storeProducts[i]);
     }
-    free(storeProducts);*/
-    free(numberOfProducts);
+    free(storeProducts);
+    free(numberOfProducts);*/
 }
 
 void ListSearch(data_t* data, char **shoppingList, char** stores, product_t** storeProducts, int numberOfStores, int* numberOfProducts, int shoppingListLines) {
@@ -60,19 +61,17 @@ void ListSearch(data_t* data, char **shoppingList, char** stores, product_t** st
         for(int x = 0; x < numberOfStores; x++){
             int* storeProductsTemp = malloc(sizeof(int) * numberOfFoundProducts);
             int numberOfTempProducts = 0;
-            printf("Going to test for products in store %d\n", x);
             for(int y = 0; y < numberOfFoundProducts; y++) {
                 if (strcmp(data->products[indexOfFoundProducts[y]].store, stores[x]) == 0){
                     storeProductsTemp[numberOfTempProducts] = indexOfFoundProducts[y];
                     numberOfTempProducts++;
                 }
             }
-            printf("Done testing for products\n");
             if(numberOfTempProducts > 0)
             {
                 int cheapestProduct = FindCheapestProduct(data, storeProductsTemp, numberOfTempProducts);
                 storeProducts[x][numberOfProducts[x]] = data->products[cheapestProduct];
-                numberOfProducts[x]++;
+                numberOfProducts[x] += 1;
             }
             free(storeProductsTemp);
         }
