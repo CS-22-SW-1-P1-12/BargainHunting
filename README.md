@@ -14,7 +14,7 @@ A program that streamlines the process of saving money on groceries, include ent
 
 
 ## search.c
-search.c has a function called ProductSearch that searches a given database of products and tags for a search term entered by the user. The function first prompts the user to input a search term, and continues to do so until a valid search term is entered (i.e. a search term that results in at least one product being found). If the user inputs the string "q", the function will return -1, indicating that the user has decided to go back to the previous menu.
+search.c has a function called ProductSearch that searches a given database of products and tags for a search term entered by the user. The function first prompts the user to input a search term, and continues to do so until a valid search term is entered (i.e. a search term that results in at least one product being found). If the user inputs the string "q", the function will return -1, indicating that the user has decided to go back to the previous menu. If a product is entered, the database is searched, creating a menu from the found products. The function then returns the index of the product that the user chooses.
 
 The function uses three helper functions to search the database: SearchProduct, SearchTag, and BroadSearch. The SearchProduct function searches for products whose names exactly match the search term. The SearchTag function searches for tags whose names exactly match the search term, and then returns any products that are associated with those tags. The BroadSearch function searches for products whose names contain the search term, and then searches for tags whose names contain the search term, returning any products that are associated with those tags.
 
