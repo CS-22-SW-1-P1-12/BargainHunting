@@ -1,0 +1,8 @@
+//
+// Created by Bruger on 08-12-2022.
+//
+
+#ifndef BARGAINHUNTING_MERGESORT_H
+#define BARGAINHUNTING_MERGESORT_H
+
+#endif //BARGAINHUNTING_MERGESORT_H

@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "database.h"
 
-void Merge(int L[], int start, int end, int mid);
-void MergeSort(int L[], int start, int end);
-void printList(int L[], int size);
+void Merge(product_t*** L, int start, int end, int mid);
+void MergeSort(product_t*** L, int start, int end);
 
-void Merge(int L[], int start, int end, int mid){
-    int L1[mid - start + 1];
-    int L2[end - mid];
+void Merge(product_t*** L, int start, int end, int mid){
+    product_t** L1[mid - start + 1];
+    product_t** L2[end - mid];
 
     for (int i = start; i <= end; ++i) {
         if(i <= mid)
@@ -37,7 +37,7 @@ void Merge(int L[], int start, int end, int mid){
     }
 }
 
-void MergeSort(int L[], int start, int end){
+void MergeSort(product_t*** L, int start, int end){
     if(start < end)
     {
         int mid = (start + end)/2;
@@ -45,12 +45,5 @@ void MergeSort(int L[], int start, int end){
         MergeSort(L, mid + 1, end);
         Merge(L, start, end, mid);
     }
-}
-
-void printList(int L[], int size){
-    int i;
-    for (i = 0; i < size; i++)
-        printf("%d ", L[i]);
-    printf("\n");
 }
 

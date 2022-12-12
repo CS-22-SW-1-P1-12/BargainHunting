@@ -9,6 +9,22 @@
 #include "ListSearch.h"
 #define MAX_STR_LEN 20
 
+double TotalPrice(product_t* products, int numberOfProducts){
+    double totalPrice = 0;
+    for (int i = 0; i < numberOfProducts; ++i) {
+        totalPrice += products[i].price;
+    }
+    return totalPrice;
+}
+
+double TotalPricePerKilo(product_t* products, int numberOfProducts){
+    double totalPrice = 0;
+    for (int i = 0; i < numberOfProducts; ++i) {
+        totalPrice += products[i].pricePerKilo;
+    }
+    return totalPrice;
+}
+
 void Calculations (product_t **storeProducts, int numberOfStores, char** stores, const int* numberOfProducts){
 
 
@@ -19,18 +35,12 @@ void Calculations (product_t **storeProducts, int numberOfStores, char** stores,
 
     for (int i = 0; i < numberOfStores; i++) {
 
-        double totalPrice = 0, totalPricePerKilo = 0;
         char *storeName = storeProducts[i][0].name;
 
         printf("number of products %d\n", numberOfProducts[i]);
 
-        for (int x = 0; x < numberOfProducts[i]; ++x) {
-
-            totalPrice += storeProducts[i][x].price;
-            totalPricePerKilo += storeProducts[i][x].pricePerKilo;
-
-
-        }
+        double totalPrice = TotalPrice(storeProducts[i], numberOfProducts[i]);
+        double totalPricePerKilo = TotalPricePerKilo(storeProducts[i], numberOfProducts[i]);
 
         printf("cry\n");
 
@@ -40,10 +50,7 @@ void Calculations (product_t **storeProducts, int numberOfStores, char** stores,
 
     }
 
-    int x = 0, counter = 0;
-    double temp[1][1];
-
-    while(counter < numberOfStores) { //fix 10
+    /*while(counter < numberOfStores) { //fix 10
 
         while (x < numberOfStores) { //fix the length skal være nr of stores og ikke 10
 
@@ -73,7 +80,9 @@ void Calculations (product_t **storeProducts, int numberOfStores, char** stores,
             counter = numberOfStores;
         }
 
-    }
+    }*/
+
+
 
 
 
