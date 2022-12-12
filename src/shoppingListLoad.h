@@ -1,0 +1,10 @@
+//
+// Created by awmol on 07-12-2022.
+//
+
+#ifndef BARGAINHUNTING_SHOPPINGLISTLOAD_H
+#define BARGAINHUNTING_SHOPPINGLISTLOAD_H
+
+char **LoadFile(FILE* file);
+
+#endif //BARGAINHUNTING_SHOPPINGLISTLOAD_H

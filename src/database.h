@@ -4,6 +4,8 @@
 
 #ifndef BARGAINHUNTING_DATABASE_H
 #define BARGAINHUNTING_DATABASE_H
+#define MAX_STR_LEN 20
+
 typedef struct {
     char* name;
 }tag_t;

@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "database.h"
-#define MAX_STR_LEN 20
+
 
 data_t* LoadDatabase(){
     FILE* filePtr;
