@@ -47,7 +47,7 @@ void Calculations (product_t **storeProducts, int numberOfStores, char** stores,
 
         while (x < numberOfStores) { //fix the length skal være nr of stores og ikke 10
 
-            if (results[x][1] > results[x + 1][1]) {
+            if (results[x][0] > results[x + 1][0]) {
 
             //swap index x,0
             temp[0][0] = results[x][0];
@@ -82,10 +82,10 @@ void Calculations (product_t **storeProducts, int numberOfStores, char** stores,
     for (int i = 0; i < numberOfStores; ++i) { //fix the thing 10
         printf("-------------------------------------------------");
         printf("%s: ", stores[i]);
-        for (int j = 0; j < 2; ++j) {
-            printf("%lf", results[i][j]);
-
-        }
+        printf("price (total): ");
+        printf("%lf ", results[i][0]);
+        printf("price per kg: ");
+        printf("%lf ", results[i][1]);
         printf("\n");
 
 
