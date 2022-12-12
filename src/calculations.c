@@ -9,31 +9,35 @@
 #include "ListSearch.h"
 #define MAX_STR_LEN 20
 
-void Calculations (product_t **storeProducts){
+void Calculations (product_t **storeProducts, int numberOfStores, const int* numberOfProducts){
 
 
     //use Sinas functions to get lengths
-    char results[10][3]; //10 skal ændres
+    char results[MAX_STR_LEN][numberOfStores]; //10 skal ændres
 
+    printf("cry\n");
 
-    for (int i = 0; storeProducts[i] != NULL  ; ++i) {
+    for (int i = 0; i < numberOfStores; i++) {
 
         double totalPrice = 0, totalPricePerKilo = 0;
-        char *storeName = storeProducts[i]->name;
+        char *storeName = storeProducts[i][0].name;
 
-        for (int j = 0; j < 5; ++j) { //fix the length thing!!
+        printf("number of products %d\n", numberOfProducts[i]);
 
-            if (storeProducts[j]->store == storeProducts[j-1]->store || j == 0) { //checks if store name is the same and increments total prices for this store if true
-                totalPrice += storeProducts[i]->price;
-                totalPricePerKilo += storeProducts[i]->pricePerKilo;
-            }
+        for (int x = 0; x < numberOfProducts[i]; ++x) {
+
+            totalPrice += storeProducts[i][x].price;
+            totalPricePerKilo += storeProducts[i][x].pricePerKilo;
+
 
         }
+
+        printf("cry\n");
 
         results[i][0] = *storeName;
         results[i][1] = (char)totalPrice;    //casting to char in order for the price values to be stored in the char array with results
         results[i][2] = (char)totalPricePerKilo;
-
+        printf("results obtained");
 
     }
 
