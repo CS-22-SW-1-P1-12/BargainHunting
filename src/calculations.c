@@ -27,35 +27,9 @@ double TotalPricePerKilo(product_t* products){
 }
 
 void Calculations (product_t **storeProducts, int numberOfStores, char** stores, const int* numberOfProducts){
-
-
-    //use Sinas functions to get lengths
-    double results[numberOfStores][2]; //10 skal ændres
-
-    printf("cry\n");
-
-    for (int i = 0; i < numberOfStores; i++) {
-
-        char *storeName = storeProducts[i][0].name;
-
-        printf("number of products %d\n", numberOfProducts[i]);
-
-        double totalPrice = TotalPrice(storeProducts[i]);
-        double totalPricePerKilo = TotalPricePerKilo(storeProducts[i]);
-
-        printf("cry\n");
-
-        results[i][0] = totalPrice;    //casting to char in order for the price values to be stored in the char array with results
-        results[i][1] = totalPricePerKilo;
-        printf("results obtained\n");
-
-    }
-
     MergeSort(storeProducts, 0, numberOfStores - 1, numberOfProducts);
-
     printf("-------------------------------------------------\n");
-
-    for (int i = 0; i < numberOfStores; ++i) { //fix the thing 10
+    for (int i = 0; i < numberOfStores; ++i) {
         if(TotalPrice(storeProducts[i]) > 0){
             printf("-------------------------------------------------");
             printf("%s: ", storeProducts[i][0].store);
@@ -69,4 +43,3 @@ void Calculations (product_t **storeProducts, int numberOfStores, char** stores,
 
 
 }
-
