@@ -93,11 +93,11 @@ void ListEditor() {
                 fclose(filePtr);
                 break;
             } else if (result == 2) {
-                InitListSearch(filePtr);
+                ListSearch(filePtr);
                 break;
             } else if (result == 3) {
                 printf("Enter product name\n");
-                scanf("%s", shoppingList[count]);
+                scanf(" %[^\n]s", shoppingList[count]);
                 fprintf(filePtr, "%s\n", shoppingList[count]);
                 count++;
             } else {

@@ -4,7 +4,7 @@
 
 #ifndef BARGAINHUNTING_DATABASE_H
 #define BARGAINHUNTING_DATABASE_H
-#define MAX_STR_LEN 20
+#define MAX_STR_LEN 50
 
 typedef struct {
     char* name;
@@ -38,4 +38,5 @@ typedef struct {
 data_t*  LoadDatabase();
 int GetStrLength(const char* data);
 char** ListOfStores(data_t* data, int* numberOfStores);
+void FreeData(data_t* data);
 #endif //BARGAINHUNTING_DATABASE_H

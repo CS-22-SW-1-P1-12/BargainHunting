@@ -56,13 +56,6 @@ char **LoadFile(FILE* file){
 
     }
     lines[i] = NULL;
-
-    printf("done\n");
-
-    for (int j = 0; lines[j] != NULL ; ++j) {
-        printf("%s", lines[j]);
-    }
-
     return lines;
 }
 
