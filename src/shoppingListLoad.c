@@ -56,11 +56,3 @@ char **LoadFile(FILE* file){
     lines[i] = NULL;
     return lines;
 }
-
-//This function prints every string in a string array as a new line.
-/*void PrintList(char** lines) {
-    for (int j = 0; lines[j] != NULL; j++) {
-        printf("%s", lines[j]);
-    }
-    printf("\n");
-}*/

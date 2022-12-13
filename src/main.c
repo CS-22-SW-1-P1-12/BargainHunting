@@ -8,12 +8,9 @@
 #include "database.h"
 #include "ListEditor.h"
 #include "search.h"
-/*
+
+/**
  * This function has the main loop and displays / returns the menu selected.
- * To make your own menu just copy this code and #include "CreateMenu.h"
- * #################################################################
- * # Put your main function into the switch case fitting your code #
- * #################################################################
  */
 void MainMenuScreen(){
     char arr[MAX_OPTIONS][MAX_STRLEN] = {"quit", "Individual Search", "List (load, make and search a list)", "Settings (store preferance etc)"};
@@ -51,5 +48,4 @@ void MainMenuScreen(){
 
 int main(){
     MainMenuScreen();
-
 }

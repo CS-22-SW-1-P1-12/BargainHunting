@@ -65,4 +65,3 @@ void MergeSort(product_t** L, int start, int end, const int* numberOfProducts){
         Merge(L, start, end, mid, numberOfProducts);
     }
 }
-
