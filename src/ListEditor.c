@@ -54,7 +54,6 @@ void GetExistingLists(char *test) {
 /*
  * making a selection list to get the user to select the list they want to modify
  *
- * todo: then printing out everything inside of the list
  */
 void ListEditor() {
     char listName[MAX_STRLEN];
@@ -94,11 +93,11 @@ void ListEditor() {
                 fclose(filePtr);
                 break;
             } else if (result == 2) {
-                InitListSearch(filePtr);
+                ListSearch(filePtr);
                 break;
             } else if (result == 3) {
                 printf("Enter product name\n");
-                scanf("%s", shoppingList[count]);
+                scanf(" %[^\n]s", shoppingList[count]);
                 fprintf(filePtr, "%s\n", shoppingList[count]);
                 count++;
             } else {

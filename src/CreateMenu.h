@@ -10,4 +10,5 @@
 
 #endif //BARGAINHUNTING_CREATEMENU_H
 
+int ScanInput(int items);
 int CreateMenu(char options[MAX_OPTIONS][MAX_STRLEN]);

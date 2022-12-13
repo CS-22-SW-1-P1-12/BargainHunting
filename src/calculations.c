@@ -7,94 +7,47 @@
 #include "CreateMenu.h"
 #include "string.h"
 #include "ListSearch.h"
-#define MAX_STR_LEN 20
+#include "mergeSort.h"
+#define MAX_STR_LEN 50
 
-void Calculations (product_t **storeProducts){
-
-
-    //use Sinas functions to get lengths
-    char results[10][3]; //10 skal ændres
-
-
-    for (int i = 0; storeProducts[i] != NULL  ; ++i) {
-
-        double totalPrice = 0, totalPricePerKilo = 0;
-        char *storeName = storeProducts[i]->name;
-
-        for (int j = 0; j < 5; ++j) { //fix the length thing!!
-
-            if (storeProducts[j]->store == storeProducts[j-1]->store || j == 0) { //checks if store name is the same and increments total prices for this store if true
-                totalPrice += storeProducts[i]->price;
-                totalPricePerKilo += storeProducts[i]->pricePerKilo;
-            }
-
-        }
-
-        results[i][0] = *storeName;
-        results[i][1] = (char)totalPrice;    //casting to char in order for the price values to be stored in the char array with results
-        results[i][2] = (char)totalPricePerKilo;
-
-
+double TotalPrice(product_t* products){
+    double totalPrice = 0;
+    for (int i = 0; (strcmp(products[i].name, "END") != 0); ++i) {
+        totalPrice += products[i].price;
     }
-
-
-    int x = 0, counter = 0;
-    char temp[1][1];
-
-
-
-    while(counter < 10) { //fix 10
-
-        while (x < 10) { //fix the length skal være nr of stores og ikke 10
-
-            if (results[x][1] > results[x + 1][1]) {
-
-            //swap index x,0
-            temp[0][0] = results[x][0];
-            results[x][0] = results[x + 1][0];
-            results[x + 1][0] = temp[0][0];
-
-            //swap index x,1
-            temp[0][0] = results[x][1];
-            results[x][1] = results[x + 1][1];
-            results[x + 1][1] = temp[0][0];
-
-            //swap index x,2
-            temp[0][0] = results[x][2];
-            results[x][2] = results[x + 1][2];
-            results[x + 1][2] = temp[0][0];
-            } else {
-             ++counter;
-            }
-
-        ++x;
-
-        }
-        x = 0;          //resets x to loop through array again
-        if(counter == 10){ //checks if array is sorted and starts over if not
-            break;
-        }else {
-            counter = 0;
-        }
-
-    }
-
-
-
-    printf("-------------------------------------------------");
-
-    for (int i = 0; i < 10; ++i) { //fix the thing 10
-        printf("-------------------------------------------------");
-        for (int j = 0; j < MAX_STR_LEN; ++j) {
-
-            printf("%c", results[i][j]);
-
-        }
-        printf("\n");
-
-
-    }
-
-
+    return totalPrice;
 }
 
+int NumberOfProducts(product_t* products){
+    int numberOfProducts = 0;
+    for (int i = 0; (strcmp(products[i].name, "END") != 0); ++i) {
+        numberOfProducts++;
+    }
+    return numberOfProducts;
+}
+
+double TotalPricePerKilo(product_t* products){
+    double totalPrice = 0;
+    for (int i = 0; (strcmp(products[i].name, "END") != 0); ++i) {
+        totalPrice += products[i].price;
+    }
+    return totalPrice;
+}
+
+void Calculations (product_t **storeProducts, int numberOfStores, char** stores, const int* numberOfProducts, int numberOfSearches){
+    MergeSort(storeProducts, 0, numberOfStores - 1, numberOfProducts);
+    printf("-------------------------------------------------\n");
+    for (int i = 0; i < numberOfStores; ++i) {
+        if(TotalPrice(storeProducts[i]) > 0){
+            printf("--------------------------------");
+            printf("%s: ", storeProducts[i][0].store);
+            printf("found products: ");
+            printf("%d/%d, ", NumberOfProducts(storeProducts[i]), numberOfSearches);
+            printf("price (total): ");
+            printf("%.2lf, ", TotalPrice(storeProducts[i]));
+            printf("price per kg: ");
+            printf("%.2lf", TotalPricePerKilo(storeProducts[i]));
+            printf("\n");
+        }
+    }
+}
