@@ -7,7 +7,7 @@
 
 #include "database.h"
 
-void Calculations (product_t **storeProducts, int numberOfStores, char** stores, int* numberOfProducts);
+void Calculations (product_t **storeProducts, int numberOfStores, char** stores, int* numberOfProducts, int numberOfSearches);
 double TotalPrice(product_t* products);
 double TotalPricePerKilo(product_t* products);
 
