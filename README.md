@@ -22,12 +22,11 @@ After the search is completed, the function returns the result of calling the Se
 
 
 ## database.c
-This code is a C program that reads a file named "data/data.txt" and loads it into memory as a data_t data structure. data_t is a user-defined type that is defined in the file "database.h", which is included in this code. The file "data/data.txt" contains information about products in the following format:
+database.c is a C program that reads a file named "data/data.txt" and loads it into memory as a data_t data structure. data_t is a user-defined type that is defined in the file "database.h", which is included in this code. The file "data/data.txt" contains information about products in the following format:
 
 name,price,pricePerKilo,weight,store,tags
 "Product1",10.0,20.0,5.0,"Store1","Tag1,Tag2"
 "Product2",5.0,15.0,2.5,"Store1","Tag2,Tag3"
-...
 
 The code begins by opening the file for reading and checking that the file pointer is not NULL. If the file pointer is NULL, the program exits with an error code of -1. Otherwise, the code allocates memory for a data_t data structure and initializes its members.
 
@@ -59,15 +58,15 @@ Once all the products have been read and stored in the data_t data structure, th
 
 
 ## listeditor.c
-This code is a simple list editor that allows users to create and edit shopping lists. The ListEditor function first calls GetExistingLists, which scans the ./data/shopping_list/ directory for existing lists and presents the user with a menu of options to either create a new list, go back, or select an existing list. If the user selects an existing list, the name of the list is returned in the test argument, which is then used to construct the path to the file containing the list.
+listeditor.c is a simple list editor that allows users to create and edit shopping lists. The ListEditor function first calls GetExistingLists, which scans the ./data/shopping_list/ directory for existing lists and presents the user with a menu of options to either create a new list, go back, or select an existing list. If the user selects an existing list, the name of the list is returned in the test argument, which is then used to construct the path to the file containing the list.
 
 The ListEditor function then opens the file and reads its contents line by line, printing each line to the screen. It also creates an options menu with the following options: "exit", "search", and "adding an item". If the user selects the "exit" option, the program exits the loop and ends. If the user selects the "search" option, the ListSearch function is called, which is not defined in this code. If the user selects the "adding an item" option, the program prompts the user for the name of an item to add, appends it to the file, and adds it to the list of options in the menu.
 
 Finally, if the user selects any other option in the menu, it is assumed to be the name of an item in the shopping list. The program then removes that item from the file and the list of options in the menu. This process continues until the user selects the "exit" option, at which point the program returns.
 
 
-## CreateMenu.c
-This code defines a function CreateMenu() that takes in a 2D array of strings as an argument and generates a numbered menu from the strings. The user is then prompted to input a number corresponding to their desired option from the menu, and the function returns the selected option as an integer.
+## createmenu.c
+CreateMenu.c defines a function CreateMenu() that takes in a 2D array of strings as an argument and generates a numbered menu from the strings. The user is then prompted to input a number corresponding to their desired option from the menu, and the function returns the selected option as an integer.
 
 For example, if the options array contains the following strings:
 ```c
@@ -92,6 +91,6 @@ The user would be prompted to input a number (e.g. "Please input the number corr
 The code also defines two helper functions: Draw() and ScanInput(). The Draw() function is responsible for generating the menu by printing each string in the options array to the screen, along with a number corresponding to its position in the array. The ScanInput() function prompts the user to input a number and then checks that the input is valid (i.e. a positive integer no greater than the number of items in the menu) before returning it.
 
 
-This documentation was written with the help of OpenAi's [chatGPT](https://chat.openai.com/chat). 
+
 
 

@@ -54,7 +54,6 @@ void GetExistingLists(char *test) {
 /*
  * making a selection list to get the user to select the list they want to modify
  *
- * todo: then printing out everything inside of the list
  */
 void ListEditor() {
     char listName[MAX_STRLEN];
