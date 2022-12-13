@@ -27,10 +27,6 @@ void ListSearch(FILE* filePtr){
     for(int i = 0; i < numberOfStores; i++){
         storeProducts[i] = malloc(sizeof(product_t) * data->productSize);
     }
-    if(stores == NULL){
-        printf("NOT ALLOCATED CORRECTLY");
-        exit(EXIT_FAILURE);
-    }
     if(storeProducts == NULL){
         printf("NOT ALLOCATED CORRECTLY");
         exit(EXIT_FAILURE);
@@ -64,7 +60,10 @@ void ListSearch(FILE* filePtr){
             free(storeProductsTemp);
         }
     }
-
+    for (int i = 0; i < shoppingListLines; ++i) {
+        free(shoppingList[i]);
+    }
+    free(shoppingList);
     Calculations(storeProducts, numberOfStores, stores, numberOfProducts, shoppingListLines);
     for (int i = 0; i < data->productSize; ++i) {
         free(stores[i]);

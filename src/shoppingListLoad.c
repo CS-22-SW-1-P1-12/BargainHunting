@@ -49,11 +49,9 @@ char **LoadFile(FILE* file){
         int bufferLength = strlen(buffer); // getting length of buffer
 
         char *item = (char *) malloc((bufferLength + 1) * sizeof(char)); // allocate space for string
-
         strcpy(item,buffer); //copy string from buffer to item
         lines[i] = item;
         i++;
-
     }
     lines[i] = NULL;
     return lines;

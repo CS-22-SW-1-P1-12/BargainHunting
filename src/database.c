@@ -177,6 +177,10 @@ char** ListOfStores(data_t* data, int* numberOfStores){
     for (int i = 0; i < data->productSize; ++i) {
         stores[i] = malloc(sizeof(char) * MAX_STR_LEN);
     }
+    if(stores == NULL){
+        printf("NOT ALLOCATED CORRECTLY");
+        exit(EXIT_FAILURE);
+    }
 
     for (int i = 0; i < data->productSize; ++i) {
         int found = 0;
