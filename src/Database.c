@@ -1,10 +1,13 @@
+//
+// Created by Lennart Diego Kahn, Mantas Akilanas and Alexander Sebastian Martinesn
+//
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "database.h"
+#include "Database.h"
 
-
+/**
+ * This function loads the database file data/data.txt
+ * @return A data_t struct pointer that includes all the items in the database
+ */
 data_t* LoadDatabase(){
     FILE* filePtr;
     filePtr = fopen("data/data.txt","r");
@@ -14,7 +17,7 @@ data_t* LoadDatabase(){
     }
     data_t* data = malloc(sizeof(data_t));
     char buffer[100];
-    int checkingNextChar;   //hvorfor int?
+    int checkingNextChar;
     data->productSize = 0;
     data->tagSize = 0;
     data->linkTableSize = 0;
@@ -156,6 +159,12 @@ data_t* LoadDatabase(){
     fclose(filePtr);
     return data;
 }
+
+/**
+ * A helper function that finds the length of a string (not the allocated space)
+ * @param string A string
+ * @return The amoung of characters in the string before the terminating character
+ */
 int GetStrLength(const char* string)
 {
     int i = 1;
@@ -166,16 +175,22 @@ int GetStrLength(const char* string)
     return i;
 }
 
-void FreeData(data_t* data){
-
-}
-
+/**
+ * This helper function creates an array of all the store names
+ * @param data The database which includes stores
+ * @param numberOfStores An int pointer that will be filled with the number of stores
+ * @return A string array containing every unique store name in the database
+ */
 char** ListOfStores(data_t* data, int* numberOfStores){
 
     printf("%d\n", data->productSize);
     char** stores = malloc(data->productSize * sizeof(char*));
     for (int i = 0; i < data->productSize; ++i) {
         stores[i] = malloc(sizeof(char) * MAX_STR_LEN);
+    }
+    if(stores == NULL){
+        printf("NOT ALLOCATED CORRECTLY");
+        exit(EXIT_FAILURE);
     }
 
     for (int i = 0; i < data->productSize; ++i) {
@@ -194,6 +209,11 @@ char** ListOfStores(data_t* data, int* numberOfStores){
     }
     return stores;
 }
+
+/**
+ * This function frees every part of a data_t* struct after it has been allocated in LoadDatabase
+ * @param data A data_t* struct
+ */
 void FreeDatabase(data_t* data)
 {
     for (int i = 0; i < data->productSize ; ++i) {

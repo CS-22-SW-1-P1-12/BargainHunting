@@ -1,12 +1,13 @@
 //
-// Created by sinag on 02.12.2022.
+// Created by Alexander Winther Moldt, Kamilla Bøgedal Jacobi, Lennart Diego Kahn and Sina Grün
 //
-
-#include "database.h"
 
 #ifndef BARGAINHUNTING_SEARCH_H
 #define BARGAINHUNTING_SEARCH_H
-
+#include "Database.h"
+#include "CreateMenu.h"
+#include <stdio.h>
+#include <string.h>
 #define MAX_SEARCH_LEN 20
 #define MAX_FOUND_PRODUCTS 32
 

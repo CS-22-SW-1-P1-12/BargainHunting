@@ -1,19 +1,15 @@
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
-
-#define SIZE_JUMPS 1
-#define MAX_BUFFER 100
+//
+// Created by Alexander Winther Moldt and Ida Marie Hem
 //
 
-/*void * shoppingListLoad()
-{
-    char** lines = LoadFile(fileName);
-    PrintList(lines);
-    return 0;
-}*/
+#include "ShoppingListLoad.h"
 
-//This function opens a text file and returns the contents in a string array called lines
+/**
+ * This function converts the contents of a text file into a string array
+ * @param file A text file that is already open
+ * @return A string array containing every line in the file
+ */
+
 char **LoadFile(FILE* file){
 
     //If the file is not found, print an error and return nothing
@@ -37,32 +33,22 @@ char **LoadFile(FILE* file){
         if (i == arrayLength)
         {
             arrayLength += SIZE_JUMPS;
-            char ** newline = realloc(lines, arrayLength * sizeof(char*));
-            if(!newline)
+            char** newLines = realloc(lines, arrayLength * sizeof(char*));
+            if(!newLines)
             {
                 printf("can't reallocate, sorry\n");
                 exit(1);
             }
-            lines = newline;
+            lines = newLines;
         }
 
         int bufferLength = strlen(buffer); // getting length of buffer
 
         char *item = (char *) malloc((bufferLength + 1) * sizeof(char)); // allocate space for string
-
         strcpy(item,buffer); //copy string from buffer to item
         lines[i] = item;
         i++;
-
     }
     lines[i] = NULL;
     return lines;
 }
-
-//This function prints every string in a string array as a new line.
-/*void PrintList(char** lines) {
-    for (int j = 0; lines[j] != NULL; j++) {
-        printf("%s", lines[j]);
-    }
-    printf("\n");
-}*/
