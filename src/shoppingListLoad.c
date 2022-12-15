@@ -4,16 +4,12 @@
 
 #define SIZE_JUMPS 1
 #define MAX_BUFFER 100
-//
 
-/*void * shoppingListLoad()
-{
-    char** lines = LoadFile(fileName);
-    PrintList(lines);
-    return 0;
-}*/
-
-//This function opens a text file and returns the contents in a string array called lines
+/**
+ * This function converts the contents of a text file into a string array
+ * @param file A text file that is already open
+ * @return A string array containing every line in the file
+ */
 char **LoadFile(FILE* file){
 
     //If the file is not found, print an error and return nothing
@@ -37,7 +33,7 @@ char **LoadFile(FILE* file){
         if (i == arrayLength)
         {
             arrayLength += SIZE_JUMPS;
-            char ** newline = realloc(lines, arrayLength * sizeof(char*));
+            char** newline = realloc(lines, arrayLength * sizeof(char*));
             if(!newline)
             {
                 printf("can't reallocate, sorry\n");

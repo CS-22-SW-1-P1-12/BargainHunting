@@ -47,6 +47,7 @@ int ScanInput(int items){
         printf("\n\nPlease input the number corresponding to your desired option: ");
 
         // Checking if the input contains an integer above 0 but not greater than items
+        scanf(" ");
         if (fgets(option, sizeof(option), stdin)) {
             result = strtol(option, &ptr, 10);
             if (result > 0 && result <= items && ptr != option) {

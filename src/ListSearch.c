@@ -79,7 +79,7 @@ void ListSearch(FILE* filePtr){
     }
     free(shoppingList);
     //Call the calculations function to find and print the cheapest store
-    Calculations(storeProducts, numberOfStores, numberOfProducts, shoppingListLines);
+    Calculations(storeProducts, numberOfStores, shoppingListLines);
     for (int i = 0; i < data->productSize; ++i) {
         free(stores[i]);
     }

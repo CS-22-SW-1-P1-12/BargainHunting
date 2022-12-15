@@ -1,8 +1,0 @@
-//
-// Created by kamil on 12/2/2022.
-//
-
-#ifndef BARGAINHUNTING_LOADUSERPREFERENCES_H
-#define BARGAINHUNTING_LOADUSERPREFERENCES_H
-char **LoadUserPreferences(char *fileName);
-#endif //BARGAINHUNTING_LOADUSERPREFERENCES_H
