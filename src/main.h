@@ -1,5 +1,5 @@
 //
-// Created by Lennart Diego Kahn
+// Created by Lennart Diego Kahn and Sina Grün
 //
 
 #ifndef BARGAINHUNTING_MAIN_H
