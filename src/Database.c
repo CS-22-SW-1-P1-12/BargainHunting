@@ -1,9 +1,6 @@
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "database.h"
 
+#include "Database.h"
 
 /**
  * This function loads the database file data/data.txt
@@ -210,6 +207,11 @@ char** ListOfStores(data_t* data, int* numberOfStores){
     }
     return stores;
 }
+
+/**
+ * This function frees every part of a data_t* struct after it has been allocated in LoadDatabase
+ * @param data A data_t* struct
+ */
 void FreeDatabase(data_t* data)
 {
     for (int i = 0; i < data->productSize ; ++i) {

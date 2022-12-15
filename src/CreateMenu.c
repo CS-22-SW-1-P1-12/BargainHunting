@@ -1,7 +1,6 @@
+
+
 #include "CreateMenu.h"
-#include <stdlib.h>
-#include <stdio.h>
-#include<string.h>
 
 /**
  * This function counts the elements in the options array used for CreateMenu

@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "database.h"
-#include "search.h"
-#include "calculations.h"
-#include "mergeSort.h"
+#include "Database.h"
+#include "Search.h"
+#include "Calculations.h"
+#include "MergeSort.h"
 
 /**
  * The merge sort algorithm fitted to be used on product_t* arrays

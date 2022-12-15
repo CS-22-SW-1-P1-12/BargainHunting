@@ -2,8 +2,8 @@
 // Created by sinag on 02.12.2022.
 //
 
-#include "search.h"
-#include "database.h"
+#include "Search.h"
+#include "Database.h"
 #include <stdio.h>
 #include "CreateMenu.h"
 #include <string.h>

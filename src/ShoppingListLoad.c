@@ -1,15 +1,13 @@
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
 
-#define SIZE_JUMPS 1
-#define MAX_BUFFER 100
+
+#include "ShoppingListLoad.h"
 
 /**
  * This function converts the contents of a text file into a string array
  * @param file A text file that is already open
  * @return A string array containing every line in the file
  */
+
 char **LoadFile(FILE* file){
 
     //If the file is not found, print an error and return nothing
@@ -33,13 +31,13 @@ char **LoadFile(FILE* file){
         if (i == arrayLength)
         {
             arrayLength += SIZE_JUMPS;
-            char** newline = realloc(lines, arrayLength * sizeof(char*));
-            if(!newline)
+            char** newLines = realloc(lines, arrayLength * sizeof(char*));
+            if(!newLines)
             {
                 printf("can't reallocate, sorry\n");
                 exit(1);
             }
-            lines = newline;
+            lines = newLines;
         }
 
         int bufferLength = strlen(buffer); // getting length of buffer

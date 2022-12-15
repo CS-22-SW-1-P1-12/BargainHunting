@@ -5,6 +5,10 @@
 #ifndef BARGAINHUNTING_DATABASE_H
 #define BARGAINHUNTING_DATABASE_H
 #define MAX_STR_LEN 50
+#include <dirent.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 typedef struct {
     char* name;

@@ -1,13 +1,8 @@
 //
 // Created by sinag on 17.11.2022.
 //
-#include "stdio.h"
-#include "database.h"
-#include "search.h"
-#include "CreateMenu.h"
-#include "string.h"
-#include "mergeSort.h"
-#define MAX_STR_LEN 50
+
+#include "Calculations.h"
 
 /**
  * This function calculates the total price of a product array

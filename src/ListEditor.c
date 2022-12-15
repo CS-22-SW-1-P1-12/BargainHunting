@@ -1,10 +1,6 @@
+
+
 #include "ListEditor.h"
-#include "CreateMenu.h"
-#include "ListSearch.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <dirent.h>
 
 enum list_menu_e {CREATE_LIST = 1, QUIT};
 enum list_editor_e {BACK = 1, SEARCH, ADD};
@@ -41,19 +37,19 @@ void GetExistingLists(char *listName) {
 
     //If the user inputs 1, allow them to create a new list
 	if(result == CREATE_LIST) {
-		char newlist[MAX_STRLEN];
+		char newList[MAX_STRLEN];
 		printf("Write your list name: \n");
-		scanf("%s", newlist);
+		scanf("%s", newList);
 		FILE *filePtr;
 		char path[MAX_STRLEN] = "./data/shopping_list/";
-		strcat(path, newlist);
+		strcat(path, newList);
 		filePtr = fopen(path, "w");
 		if(filePtr == NULL) {
 			exit(EXIT_FAILURE);
 		}
 		fprintf(filePtr, " ");
 		fclose(filePtr);
-		strcpy(listName, newlist);
+		strcpy(listName, newList);
 	} else if(result == QUIT) {
 		//letting function end
         strcpy(listName, "quit");

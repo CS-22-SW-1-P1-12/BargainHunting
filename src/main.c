@@ -2,12 +2,7 @@
 // Created by Lennart Diego Kahn on 03/11/2022.
 //
 
-#include <stdio.h>
 #include "main.h"
-#include "CreateMenu.h"
-#include "database.h"
-#include "ListEditor.h"
-#include "search.h"
 
 /**
  * This function has the main loop and displays / returns the menu selected.
@@ -32,6 +27,7 @@ void MainMenuScreen(){
                 printf("Opening Search menu\n");
 		        data_t* data = LoadDatabase();
 		        ProductSearch(data);
+                FreeDatabase(data);
                 break;
             case LIST:
                 // Open up the List menu and start the List function

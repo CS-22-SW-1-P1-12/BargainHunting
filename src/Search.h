@@ -2,7 +2,7 @@
 // Created by sinag on 02.12.2022.
 //
 
-#include "database.h"
+#include "Database.h"
 
 #ifndef BARGAINHUNTING_SEARCH_H
 #define BARGAINHUNTING_SEARCH_H

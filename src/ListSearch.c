@@ -1,15 +1,8 @@
 //
 // Created by Bruger on 05-12-2022.
 //
-// Husk at definere ListSearch i ListEditor.
+
 #include "ListSearch.h"
-#include "search.h"
-#include "shoppingListLoad.h"
-#include "calculations.h"
-#include "CreateMenu.h"
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 
 /**
  * This function searches through a shopping list
@@ -47,6 +40,9 @@ void ListSearch(FILE* filePtr){
     //Searching through each string in the shopping list array
     for (int i = 0; i < shoppingListLines; i++){
         int numberOfFoundProducts = SearchData(shoppingList[i], data, indexOfFoundProducts);
+        if(numberOfProducts == 0) {
+            continue;
+        }
         //Going through each store to find the products that match it
         for(int x = 0; x < numberOfStores; x++){
             int* storeProductsTemp = malloc(sizeof(int) * numberOfFoundProducts);
@@ -74,12 +70,13 @@ void ListSearch(FILE* filePtr){
             free(storeProductsTemp);
         }
     }
+    //Call the calculations function to find and print the cheapest store
+
+    Calculations(storeProducts, numberOfStores, shoppingListLines);
+
     for (int i = 0; i < shoppingListLines; ++i) {
         free(shoppingList[i]);
     }
-    free(shoppingList);
-    //Call the calculations function to find and print the cheapest store
-    Calculations(storeProducts, numberOfStores, shoppingListLines);
     for (int i = 0; i < data->productSize; ++i) {
         free(stores[i]);
     }
@@ -89,5 +86,6 @@ void ListSearch(FILE* filePtr){
     }
     free(storeProducts);
     free(numberOfProducts);
+    FreeDatabase(data);
     exit(EXIT_SUCCESS);
 }
