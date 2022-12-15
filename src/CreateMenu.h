@@ -1,5 +1,5 @@
 //
-// Created by Lennart Diego Kahn on 21/11/2022.
+// Created by Lennart Diego Kahn
 //
 
 #ifndef BARGAINHUNTING_CREATEMENU_H

@@ -1,5 +1,5 @@
 //
-// Created by Lennart Diego Kahn on 03/11/2022.
+// Created by Lennart Diego Kahn
 //
 
 #include "main.h"

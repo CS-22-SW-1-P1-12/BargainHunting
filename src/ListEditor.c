@@ -1,4 +1,6 @@
-
+//
+// Created by Lennart Diego Kahn and Mantas Akilanas
+//
 
 #include "ListEditor.h"
 

@@ -1,4 +1,6 @@
-
+//
+// Created by Alexander Winther Moldt and Ida Marie Hem
+//
 
 #include "ShoppingListLoad.h"
 

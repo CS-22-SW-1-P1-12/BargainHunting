@@ -1,4 +1,6 @@
-
+//
+// Created by Lennart Diego Kahn, Mantas Akilanas and Alexander Sebastian Martinesn
+//
 
 #include "Database.h"
 

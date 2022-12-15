@@ -1,5 +1,5 @@
 //
-// Created by manta on 01/12/2022.
+// Created by Lennart Diego Kahn and Mantas Akilanas
 //
 
 #ifndef BARGAINHUNTING_LISTEDITOR_H

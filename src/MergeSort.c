@@ -1,8 +1,7 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "Database.h"
-#include "Search.h"
-#include "Calculations.h"
+//
+// Created by Sina Grün
+//
+
 #include "MergeSort.h"
 
 /**

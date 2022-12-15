@@ -1,5 +1,5 @@
 //
-// Created by Bruger on 05-12-2022.
+// Created by Ida Marie Hem and Sina Grün
 //
 
 #include "ListSearch.h"

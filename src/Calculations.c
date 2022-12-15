@@ -1,5 +1,5 @@
 //
-// Created by sinag on 17.11.2022.
+// Created by Alexander Winther Moldt, Kamilla Bøgedal Jacobi, and Sina Grün
 //
 
 #include "Calculations.h"

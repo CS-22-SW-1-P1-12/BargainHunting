@@ -1,5 +1,5 @@
 //
-// Created by manta on 21/11/2022.
+// Created by Lennart Diego Kahn, Mantas Akilanas and Alexander Sebastian Martinesn
 //
 
 #ifndef BARGAINHUNTING_DATABASE_H

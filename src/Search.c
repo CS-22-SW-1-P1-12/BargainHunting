@@ -1,14 +1,8 @@
 //
-// Created by sinag on 02.12.2022.
+// Created by Alexander Winther Moldt, Kamilla Bøgedal Jacobi, Lennart Diego Kahn and Sina Grün
 //
 
 #include "Search.h"
-#include "Database.h"
-#include <stdio.h>
-#include "CreateMenu.h"
-#include <string.h>
-
-//REMEMBER TO FREE AT SOME POINT
 
 /**
  * This function asks a user for a product name and searches through a database

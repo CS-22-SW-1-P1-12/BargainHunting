@@ -1,5 +1,5 @@
 //
-// Created by sinag on 12.12.2022.
+// Created by Alexander Winther Moldt, Kamilla Bøgedal Jacobi, and Sina Grün
 //
 
 #ifndef BARGAINHUNTING_CALCULATIONS_H
