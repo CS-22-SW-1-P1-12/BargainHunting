@@ -182,8 +182,6 @@ int GetStrLength(const char* string)
  * @return A string array containing every unique store name in the database
  */
 char** ListOfStores(data_t* data, int* numberOfStores){
-
-    printf("%d\n", data->productSize);
     char** stores = malloc(data->productSize * sizeof(char*));
     for (int i = 0; i < data->productSize; ++i) {
         stores[i] = malloc(sizeof(char) * MAX_STR_LEN);
