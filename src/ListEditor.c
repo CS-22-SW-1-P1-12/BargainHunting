@@ -94,7 +94,6 @@ void ListEditor() {
         while (1) {
             printf("\n\n you may now remove or add items to your list \n");
             int result = CreateMenu(shoppingList);
-            printf("result is %d\n", result);
             if (result == BACK) {
                 fclose(filePtr);
                 break;
