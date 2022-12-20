@@ -21,7 +21,7 @@ char **LoadFile(FILE* file){
 
     int arrayLength = SIZE_JUMPS;
 
-    char **lines = (char**) malloc(arrayLength * sizeof(char*));//allocate space for chars
+    char **lines = (char**) malloc((arrayLength + 1) * sizeof(char*));//allocate space for chars
 
     char buffer[MAX_BUFFER];
     int i = 0;
@@ -33,7 +33,7 @@ char **LoadFile(FILE* file){
         if (i == arrayLength)
         {
             arrayLength += SIZE_JUMPS;
-            char** newLines = realloc(lines, arrayLength * sizeof(char*));
+            char** newLines = realloc(lines, (arrayLength + 1) * sizeof(char*));
             if(!newLines)
             {
                 printf("can't reallocate, sorry\n");

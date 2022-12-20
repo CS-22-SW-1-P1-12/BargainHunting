@@ -65,7 +65,7 @@ void SearchProduct(const char searchTerm[MAX_SEARCH_LEN], data_t* database, int 
         {
             indexOfFoundProducts[*numberOfFoundProducts] = i;
             *numberOfFoundProducts += 1;
-        }
+        }   
     }
 
 }
