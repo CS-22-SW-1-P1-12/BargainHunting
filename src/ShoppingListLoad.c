@@ -37,7 +37,7 @@ char **LoadFile(FILE* file){
             if(!newLines)
             {
                 printf("can't reallocate, sorry\n");
-                exit(1);
+                exit(EXIT_FAILURE);
             }
             lines = newLines;
         }
