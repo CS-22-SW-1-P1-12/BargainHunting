@@ -183,7 +183,6 @@ int GetStrLength(const char* string)
  */
 char** ListOfStores(data_t* data, int* numberOfStores){
 
-    printf("%d\n", data->productSize);
     char** stores = malloc(data->productSize * sizeof(char*));
     for (int i = 0; i < data->productSize; ++i) {
         stores[i] = malloc(sizeof(char) * MAX_STR_LEN);
